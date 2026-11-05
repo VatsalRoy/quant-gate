@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quant-gate"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["requests", "huggingface_hub", "pandas"]
+
+[tool.setuptools]
+packages = ["quant_gate", "quant_gate.screens"]
