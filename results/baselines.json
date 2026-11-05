@@ -1,0 +1,27 @@
+{
+  "code": {
+    "n": 164,
+    "bf16_score": 0.72,
+    "q8_0_score": 0.726,
+    "bf16_only_pass": [
+      "HumanEval/128",
+      "HumanEval/64"
+    ],
+    "q8_0_only_pass": [
+      "HumanEval/113",
+      "HumanEval/137",
+      "HumanEval/45"
+    ],
+    "flips": 5,
+    "paired_se_pts": 1.36
+  },
+  "tools": {
+    "n": 60,
+    "bf16_score": 1.0,
+    "q8_0_score": 1.0,
+    "bf16_only_pass": [],
+    "q8_0_only_pass": [],
+    "flips": 0,
+    "paired_se_pts": 0.0
+  }
+}
