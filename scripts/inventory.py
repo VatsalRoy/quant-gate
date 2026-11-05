@@ -17,9 +17,9 @@ REPOS = {
 # Values: "yes", "no", or "unknown"
 IMATRIX_PER_CARD = {
     "official": "unknown",
-    "bartowski": "unknown",
+    "bartowski": "yes",
     "prithivMLmods": "unknown",
-    "AtomicChat": "unknown",
+    "AtomicChat": "yes (tag)",
 }
 
 N_PARAMS = 1.73e9  # from the model card; used for approximate bits per weight

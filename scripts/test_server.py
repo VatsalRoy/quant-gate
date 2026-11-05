@@ -1,5 +1,7 @@
 import time
 from quant_gate.server import LlamaServer
+from quant_gate.config import llama_version
+print("Using:", llama_version())
 
 t0 = time.time()
 with LlamaServer("models/LFM3-1.7B-Q8_0.gguf") as srv:

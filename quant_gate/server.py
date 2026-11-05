@@ -2,6 +2,7 @@
 import subprocess
 import time
 from pathlib import Path
+from quant_gate.config import tool
 
 import requests
 
@@ -12,7 +13,7 @@ class LlamaServer:
         self.model_path = Path(model_path)
         self.port = port
         self.ctx = ctx
-        self.binary = binary
+        self.binary = binary or tool("llama-server")
         self.url = f"http://127.0.0.1:{port}"
         self.log_path = Path(log_path or f"results/logs/{self.model_path.stem}.log")
         self.extra_args = extra_args or []
