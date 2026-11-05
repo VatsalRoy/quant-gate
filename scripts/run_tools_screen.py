@@ -25,6 +25,7 @@ out.write_text(json.dumps({"summary": summary, "results": results}, indent=2))
 
 print(json.dumps({k: v for k, v in summary.items() if k != "failures"}, indent=2))
 print(f"Total time: {sum(r['seconds'] for r in results):.1f}s")
+print("Correct but not clean:", summary["unclean"])
 for r in results:
     if not r["ok"]:
         print(f"\n--- {r['id']}: {r['reason']}")

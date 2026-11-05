@@ -33,41 +33,55 @@ def compare_obj(exp: dict, got) -> str:
     return "ok"
 
 
-def check_tool(case: dict, msg: dict) -> str:
+def check_tool(case: dict, msg: dict) -> tuple[str, bool]:
     calls = msg.get("tool_calls") or []
     if not calls:
-        return "no_tool_call"
+        return "no_tool_call", False
     if len(calls) > 1:
-        return "multiple_calls"
+        return "multiple_calls", False
     fn = calls[0].get("function", {})
     if fn.get("name") != case["expected"]["name"]:
-        return "wrong_name"
+        return "wrong_name", False
     args = fn.get("arguments")
     if isinstance(args, str):
         try:
             args = json.loads(args)
         except json.JSONDecodeError:
-            return "bad_args_json"
-    return compare_obj(case["expected"]["arguments"], args)
+            return "bad_args_json", False
+    clean = not (msg.get("content") or "").strip()  # no stray text alongside the call
+    return compare_obj(case["expected"]["arguments"], args), clean
 
 
-def check_json(case: dict, msg: dict) -> str:
-    text = (msg.get("content") or "").strip()
-    m = FENCE_RE.match(text)  # allow ```json ... ``` fences (documented leniency)
+def extract_json(text: str):
+    """Return (obj, clean). clean=True if the reply was only JSON (optionally fenced)."""
+    t = text.strip()
+    m = FENCE_RE.match(t)
     if m:
-        text = m.group(1)
+        return json.loads(m.group(1)), True
     try:
-        obj = json.loads(text)
+        return json.loads(t), True
     except json.JSONDecodeError:
-        return "not_json"
-    return compare_obj(case["expected"], obj)
+        pass
+    start = t.find("{")  # lenient: first JSON object anywhere in the reply
+    if start == -1:
+        raise ValueError("no JSON object found")
+    obj, _ = json.JSONDecoder().raw_decode(t[start:])
+    return obj, False
+
+
+def check_json(case: dict, msg: dict) -> tuple[str, bool]:
+    try:
+        obj, clean = extract_json(msg.get("content") or "")
+    except (ValueError, json.JSONDecodeError):
+        return "not_json", False
+    return compare_obj(case["expected"], obj), clean
 
 
 def run(srv, cases: list[dict], max_tokens: int = 256) -> list[dict]:
     results = []
     for c in cases:
         t0 = time.time()
-        msg = {}
+        msg, clean = {}, False
         try:
             out = srv.chat(c["messages"], max_tokens=max_tokens, tools=c.get("tools"))
             ch = out["choices"][0]
@@ -75,13 +89,14 @@ def run(srv, cases: list[dict], max_tokens: int = 256) -> list[dict]:
             if ch.get("finish_reason") == "length":
                 reason = "truncated"
             elif c["kind"] == "tool":
-                reason = check_tool(c, msg)
+                reason, clean = check_tool(c, msg)
             else:
-                reason = check_json(c, msg)
+                reason, clean = check_json(c, msg)
         except Exception as e:
             reason = f"request_error:{type(e).__name__}"
         results.append({
-            "id": c["id"], "kind": c["kind"], "ok": reason == "ok", "reason": reason,
+            "id": c["id"], "kind": c["kind"], "ok": reason == "ok", "clean": clean,
+            "reason": reason,
             "content": (msg.get("content") or "")[:500],
             "tool_calls": msg.get("tool_calls"),
             "seconds": round(time.time() - t0, 2)})
@@ -89,12 +104,16 @@ def run(srv, cases: list[dict], max_tokens: int = 256) -> list[dict]:
 
 
 def summarize(results: list[dict]) -> dict:
-    def rate(rs):
-        return round(sum(r["ok"] for r in rs) / len(rs), 3) if rs else None
+    def rate(rs, key="ok"):
+        return round(sum(r[key] for r in rs) / len(rs), 3) if rs else None
+    tool_rs = [r for r in results if r["kind"] == "tool"]
+    json_rs = [r for r in results if r["kind"] == "json"]
     return {
         "n": len(results),
         "score": rate(results),
-        "tool_score": rate([r for r in results if r["kind"] == "tool"]),
-        "json_score": rate([r for r in results if r["kind"] == "json"]),
+        "tool_score": rate(tool_rs),
+        "json_score": rate(json_rs),
+        "clean_rate": rate(results, "clean"),
         "failures": {r["id"]: r["reason"] for r in results if not r["ok"]},
+        "unclean": [r["id"] for r in results if r["ok"] and not r["clean"]],
     }
