@@ -1,0 +1,951 @@
+{
+  "summary": {
+    "n": 60,
+    "score": 1.0,
+    "tool_score": 1.0,
+    "json_score": 1.0,
+    "clean_rate": 0.9,
+    "failures": {},
+    "unclean": [
+      "json-order-1",
+      "json-order-2",
+      "json-order-3",
+      "json-order-4",
+      "json-order-5",
+      "json-order-7"
+    ],
+    "leaked_thinking": 0
+  },
+  "results": [
+    {
+      "id": "tool-weather-0",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Tokyo\",\"unit\":\"fahrenheit\"}"
+          },
+          "id": "1pKDQDEEHYPGHyIuZlR0FKO2kczfduqk"
+        }
+      ],
+      "seconds": 1.15,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-weather-1",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Tokyo\",\"unit\":\"celsius\"}"
+          },
+          "id": "Zt5cQJAFSh37SgAuazIZiZRXbsZFwV13"
+        }
+      ],
+      "seconds": 1.05,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-weather-2",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Lima\",\"unit\":\"celsius\"}"
+          },
+          "id": "vgOcY6A4sPpW1pS9FIKAQKhHDidmzbOS"
+        }
+      ],
+      "seconds": 1.01,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-weather-3",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Nairobi\",\"unit\":\"celsius\"}"
+          },
+          "id": "ycR1SlddhOPGmC7nYSxPU68Z1STo4w3f"
+        }
+      ],
+      "seconds": 1.05,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-weather-4",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Lima\",\"unit\":\"fahrenheit\"}"
+          },
+          "id": "fPI7dXjJFO9jN1JA6suUheRpkfEvfunH"
+        }
+      ],
+      "seconds": 1.07,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-weather-5",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_weather",
+            "arguments": "{\"city\":\"Toronto\",\"unit\":\"celsius\"}"
+          },
+          "id": "In0a38kZxpjXodzqfurdOHYfXJFnV2cP"
+        }
+      ],
+      "seconds": 1.16,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-currency-0",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "convert_currency",
+            "arguments": "{\"amount\":42,\"from_currency\":\"USD\",\"to_currency\":\"EUR\"}"
+          },
+          "id": "fIK10OIPmO2Jt5xot2iY0260Qzys6rzJ"
+        }
+      ],
+      "seconds": 1.38,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-currency-1",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "convert_currency",
+            "arguments": "{\"amount\":99.5,\"from_currency\":\"GBP\",\"to_currency\":\"JPY\"}"
+          },
+          "id": "NY0POZcaenan5i0tZ5kdji8srVBePUBl"
+        }
+      ],
+      "seconds": 1.39,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-currency-2",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "convert_currency",
+            "arguments": "{\"amount\":42,\"from_currency\":\"INR\",\"to_currency\":\"USD\"}"
+          },
+          "id": "l3ufnTej9ULZv15tWs28ARAfPtOSDpVo"
+        }
+      ],
+      "seconds": 1.38,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-currency-3",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "convert_currency",
+            "arguments": "{\"amount\":1000,\"from_currency\":\"CAD\",\"to_currency\":\"MXN\"}"
+          },
+          "id": "d2ZVj7Qw4XZSb3HwwsKCvs2hdw07r2zj"
+        }
+      ],
+      "seconds": 1.32,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-currency-4",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "convert_currency",
+            "arguments": "{\"amount\":120,\"from_currency\":\"INR\",\"to_currency\":\"USD\"}"
+          },
+          "id": "8nu0VyOJVxQnnVqxLO99y06k87EK60vF"
+        }
+      ],
+      "seconds": 1.25,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-currency-5",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "convert_currency",
+            "arguments": "{\"amount\":42,\"from_currency\":\"GBP\",\"to_currency\":\"JPY\"}"
+          },
+          "id": "rlxNEsyeRlG34OhoHHRdiuXW76IfD9Af"
+        }
+      ],
+      "seconds": 1.45,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-timer-0",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "set_timer",
+            "arguments": "{\"minutes\":25,\"label\":\"tea\"}"
+          },
+          "id": "HFVGIXmoW3nu6TFVonmkrXp6FM7NPggB"
+        }
+      ],
+      "seconds": 0.9,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-timer-1",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "set_timer",
+            "arguments": "{\"minutes\":90,\"label\":\"tea\"}"
+          },
+          "id": "PrmrqJGSYwozLb88qCIHDCD9HL5MldB3"
+        }
+      ],
+      "seconds": 0.9,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-timer-2",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "set_timer",
+            "arguments": "{\"minutes\":90,\"label\":\"laundry\"}"
+          },
+          "id": "57HBEdSA7wWgn2TxgepO0gIlPSZ1Bte1"
+        }
+      ],
+      "seconds": 1.03,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-timer-3",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "set_timer",
+            "arguments": "{\"minutes\":5,\"label\":\"tea\"}"
+          },
+          "id": "mo4j9P0gYkJSuDfH3Y3AKTeLkNiVdiQg"
+        }
+      ],
+      "seconds": 0.89,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-timer-4",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "set_timer",
+            "arguments": "{\"minutes\":5,\"label\":\"oven\"}"
+          },
+          "id": "JKwUPMHAS6sy0J6KrZmOEUcE1FTp2pQY"
+        }
+      ],
+      "seconds": 0.95,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-timer-5",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "set_timer",
+            "arguments": "{\"minutes\":45,\"label\":\"study break\"}"
+          },
+          "id": "VxYI940PekAX1ftwwlMCTPwYorbAciVd"
+        }
+      ],
+      "seconds": 0.99,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-booking-0",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "book_table",
+            "arguments": "{\"restaurant\":\"Blue Lotus\",\"people\":2,\"time\":\"20:30\"}"
+          },
+          "id": "70krVEOiv2TmDWnW3SYHzs2bcosgJGED"
+        }
+      ],
+      "seconds": 1.26,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-booking-1",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "book_table",
+            "arguments": "{\"restaurant\":\"The Grill House\",\"people\":2,\"time\":\"12:00\"}"
+          },
+          "id": "dU4yAWltb9Lszb8JU8Wunm46bBFqb5NO"
+        }
+      ],
+      "seconds": 1.25,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-booking-2",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "book_table",
+            "arguments": "{\"restaurant\":\"Blue Lotus\",\"people\":2,\"time\":\"12:00\"}"
+          },
+          "id": "JG7lA58OCPkJe6a7Smr9FCYdgXAmwLvX"
+        }
+      ],
+      "seconds": 1.2,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-booking-3",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "book_table",
+            "arguments": "{\"restaurant\":\"The Grill House\",\"people\":2,\"time\":\"19:00\"}"
+          },
+          "id": "BUTuDd71iKxmNWVP5lkeol9lbSckI8P0"
+        }
+      ],
+      "seconds": 1.24,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-booking-4",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "book_table",
+            "arguments": "{\"restaurant\":\"Sakura\",\"people\":2,\"time\":\"12:00\"}"
+          },
+          "id": "6EATHCrir8Vhb55168yFTLaDGTPT5T5O"
+        }
+      ],
+      "seconds": 1.21,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-booking-5",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "book_table",
+            "arguments": "{\"restaurant\":\"Blue Lotus\",\"people\":6,\"time\":\"19:00\"}"
+          },
+          "id": "8lvWALkQyQjzByydfLdNvYeclkfLL4xw"
+        }
+      ],
+      "seconds": 1.19,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-stock-0",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_stock_price",
+            "arguments": "{\"ticker\":\"TSLA\"}"
+          },
+          "id": "ielbJwmmEJ48Ip0UrFalxbCQvMjlIFtv"
+        }
+      ],
+      "seconds": 0.78,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-stock-1",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_stock_price",
+            "arguments": "{\"ticker\":\"MSFT\"}"
+          },
+          "id": "d2Yuu173tesNRY5y0YJ4hxJx7BZVP1ss"
+        }
+      ],
+      "seconds": 0.79,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-stock-2",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_stock_price",
+            "arguments": "{\"ticker\":\"META\"}"
+          },
+          "id": "BwPGhSi72GeptBj4lFuHCHE36ZVZf34X"
+        }
+      ],
+      "seconds": 0.82,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-stock-3",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_stock_price",
+            "arguments": "{\"ticker\":\"AAPL\"}"
+          },
+          "id": "dq8wHB4rypsbQsakMeOz45LHYvpioum1"
+        }
+      ],
+      "seconds": 0.8,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-stock-4",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_stock_price",
+            "arguments": "{\"ticker\":\"NVDA\"}"
+          },
+          "id": "f95LEKqnIEkdCOoHlrUG0KfRzQRxUq5P"
+        }
+      ],
+      "seconds": 0.83,
+      "leaked_thinking": false
+    },
+    {
+      "id": "tool-stock-5",
+      "kind": "tool",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "",
+      "tool_calls": [
+        {
+          "type": "function",
+          "function": {
+            "name": "get_stock_price",
+            "arguments": "{\"ticker\":\"NVDA\"}"
+          },
+          "id": "CARGfbVnlHg1ohehzyuQPoBZXmxBeLVZ"
+        }
+      ],
+      "seconds": 0.81,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-person-0",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"name\": \"Amara Okafor\",\n  \"age\": 37,\n  \"city\": \"Cape Town\"\n}",
+      "tool_calls": null,
+      "seconds": 0.89,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-person-1",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"name\": \"Priya Nair\",\n  \"age\": 37,\n  \"city\": \"Berlin\"\n}",
+      "tool_calls": null,
+      "seconds": 0.84,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-person-2",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"name\": \"Omar Haddad\",\n  \"age\": 68,\n  \"city\": \"Seoul\"\n}",
+      "tool_calls": null,
+      "seconds": 0.89,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-person-3",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"name\": \"Kenji Sato\",\n  \"age\": 23,\n  \"city\": \"Berlin\"\n}",
+      "tool_calls": null,
+      "seconds": 0.83,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-person-4",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"name\": \"Maria Lopez\",\n  \"age\": 37,\n  \"city\": \"Seoul\"\n}",
+      "tool_calls": null,
+      "seconds": 0.77,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-person-5",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"name\": \"Omar Haddad\",\n  \"age\": 51,\n  \"city\": \"Seoul\"\n}",
+      "tool_calls": null,
+      "seconds": 0.91,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-person-6",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"name\": \"Liam Walsh\",\n  \"age\": 37,\n  \"city\": \"Chicago\"\n}",
+      "tool_calls": null,
+      "seconds": 0.78,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-person-7",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"name\": \"Omar Haddad\",\n  \"age\": 68,\n  \"city\": \"Berlin\"\n}",
+      "tool_calls": null,
+      "seconds": 0.86,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-person-8",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"name\": \"Kenji Sato\",\n  \"age\": 23,\n  \"city\": \"Cape Town\"\n}",
+      "tool_calls": null,
+      "seconds": 0.85,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-person-9",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"name\": \"Maria Lopez\",\n  \"age\": 68,\n  \"city\": \"Cape Town\"\n}",
+      "tool_calls": null,
+      "seconds": 0.79,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-order-0",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"product\": \"wireless mouse\",\n  \"quantity\": 3,\n  \"express\": true\n}",
+      "tool_calls": null,
+      "seconds": 0.74,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-order-1",
+      "kind": "json",
+      "ok": true,
+      "clean": false,
+      "reason": "ok",
+      "content": "{\n  \"product\": \"water bottle\",\n  \"quantity\": 3,\n  \"express\": false\n}\n```",
+      "tool_calls": null,
+      "seconds": 0.75,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-order-2",
+      "kind": "json",
+      "ok": true,
+      "clean": false,
+      "reason": "ok",
+      "content": "{\n  \"product\": \"notebook\",\n  \"quantity\": 1,\n  \"express\": false\n}\n```",
+      "tool_calls": null,
+      "seconds": 0.74,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-order-3",
+      "kind": "json",
+      "ok": true,
+      "clean": false,
+      "reason": "ok",
+      "content": "{\n  \"product\": \"desk lamp\",\n  \"quantity\": 1,\n  \"express\": false\n}\n```",
+      "tool_calls": null,
+      "seconds": 0.76,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-order-4",
+      "kind": "json",
+      "ok": true,
+      "clean": false,
+      "reason": "ok",
+      "content": "{\n  \"product\": \"wireless mouse\",\n  \"quantity\": 1,\n  \"express\": false\n}\n```",
+      "tool_calls": null,
+      "seconds": 0.77,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-order-5",
+      "kind": "json",
+      "ok": true,
+      "clean": false,
+      "reason": "ok",
+      "content": "{\n  \"product\": \"notebook\",\n  \"quantity\": 3,\n  \"express\": false\n}\n```",
+      "tool_calls": null,
+      "seconds": 0.74,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-order-6",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"product\": \"desk lamp\",\n  \"quantity\": 12,\n  \"express\": true\n}",
+      "tool_calls": null,
+      "seconds": 0.75,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-order-7",
+      "kind": "json",
+      "ok": true,
+      "clean": false,
+      "reason": "ok",
+      "content": "{\n  \"product\": \"wireless mouse\",\n  \"quantity\": 12,\n  \"express\": false\n}\n```",
+      "tool_calls": null,
+      "seconds": 0.81,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-order-8",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"product\": \"wireless mouse\",\n  \"quantity\": 1,\n  \"express\": true\n}",
+      "tool_calls": null,
+      "seconds": 0.77,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-order-9",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"product\": \"desk lamp\",\n  \"quantity\": 1,\n  \"express\": true\n}",
+      "tool_calls": null,
+      "seconds": 0.75,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-event-0",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"event\": \"hackathon\",\n  \"date\": \"2026-12-01\"\n}",
+      "tool_calls": null,
+      "seconds": 0.77,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-event-1",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"event\": \"board meeting\",\n  \"date\": \"2026-03-14\"\n}",
+      "tool_calls": null,
+      "seconds": 0.72,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-event-2",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"event\": \"board meeting\",\n  \"date\": \"2026-12-01\"\n}",
+      "tool_calls": null,
+      "seconds": 0.7,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-event-3",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"event\": \"hackathon\",\n  \"date\": \"2026-07-03\"\n}",
+      "tool_calls": null,
+      "seconds": 0.73,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-event-4",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"event\": \"hackathon\",\n  \"date\": \"2027-01-22\"\n}",
+      "tool_calls": null,
+      "seconds": 0.72,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-event-5",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"event\": \"team offsite\",\n  \"date\": \"2026-07-03\"\n}",
+      "tool_calls": null,
+      "seconds": 0.73,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-event-6",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"event\": \"product launch\",\n  \"date\": \"2027-01-22\"\n}",
+      "tool_calls": null,
+      "seconds": 0.75,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-event-7",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"event\": \"product launch\",\n  \"date\": \"2026-12-01\"\n}",
+      "tool_calls": null,
+      "seconds": 0.74,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-event-8",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"event\": \"hackathon\",\n  \"date\": \"2026-03-14\"\n}",
+      "tool_calls": null,
+      "seconds": 0.8,
+      "leaked_thinking": false
+    },
+    {
+      "id": "json-event-9",
+      "kind": "json",
+      "ok": true,
+      "clean": true,
+      "reason": "ok",
+      "content": "{\n  \"event\": \"board meeting\",\n  \"date\": \"2027-01-22\"\n}",
+      "tool_calls": null,
+      "seconds": 0.71,
+      "leaked_thinking": false
+    }
+  ]
+}

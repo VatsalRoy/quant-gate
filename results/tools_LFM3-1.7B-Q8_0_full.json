@@ -8,7 +8,8 @@
     "failures": {},
     "unclean": [
       "json-order-7"
-    ]
+    ],
+    "leaked_thinking": 0
   },
   "results": [
     {
@@ -25,10 +26,11 @@
             "name": "get_weather",
             "arguments": "{\"city\":\"Tokyo\",\"unit\":\"fahrenheit\"}"
           },
-          "id": "FY7ytUMJyf0ivsAO1YJgb9Be52cLF1pj"
+          "id": "8zWqEJKQL1s5nxTaQdvD5eCtgcCSObrN"
         }
       ],
-      "seconds": 0.8
+      "seconds": 0.78,
+      "leaked_thinking": false
     },
     {
       "id": "tool-weather-1",
@@ -44,10 +46,11 @@
             "name": "get_weather",
             "arguments": "{\"city\":\"Tokyo\",\"unit\":\"celsius\"}"
           },
-          "id": "1xtXBanuIgLTzRJcq7aWkomkkAoXUnDx"
+          "id": "V01uztwItrm4dR9qChveHIeaY4XyfdyE"
         }
       ],
-      "seconds": 0.76
+      "seconds": 0.76,
+      "leaked_thinking": false
     },
     {
       "id": "tool-weather-2",
@@ -63,10 +66,11 @@
             "name": "get_weather",
             "arguments": "{\"city\":\"Lima\",\"unit\":\"celsius\"}"
           },
-          "id": "OESPJJbIUnRijdal6FVxo9wdCS1CCmfm"
+          "id": "yq1rbCy9WlpLet4xLywazOSWDvqsloQT"
         }
       ],
-      "seconds": 0.77
+      "seconds": 0.76,
+      "leaked_thinking": false
     },
     {
       "id": "tool-weather-3",
@@ -82,10 +86,11 @@
             "name": "get_weather",
             "arguments": "{\"city\":\"Nairobi\",\"unit\":\"celsius\"}"
           },
-          "id": "z5fl5xJmhUHnJDRnGgeIT2tUeQzzClVD"
+          "id": "AY3axlBtA6AJlWl8j8CcZ2rI6KsH1mxc"
         }
       ],
-      "seconds": 0.78
+      "seconds": 0.78,
+      "leaked_thinking": false
     },
     {
       "id": "tool-weather-4",
@@ -101,10 +106,11 @@
             "name": "get_weather",
             "arguments": "{\"city\":\"Lima\",\"unit\":\"fahrenheit\"}"
           },
-          "id": "89AethUnZQLzZdqw6Nbd97X6CMbu9sXE"
+          "id": "KRhkgjaaWnknDwngaNRRKEap25TTRmns"
         }
       ],
-      "seconds": 0.76
+      "seconds": 0.76,
+      "leaked_thinking": false
     },
     {
       "id": "tool-weather-5",
@@ -120,10 +126,11 @@
             "name": "get_weather",
             "arguments": "{\"city\":\"Toronto\",\"unit\":\"celsius\"}"
           },
-          "id": "qYDwy5LKc82KzHX9r1Be2HZrlTj0cxBT"
+          "id": "6MwZRbZEQe3axbN40gDGiapU9GbE9PLa"
         }
       ],
-      "seconds": 0.77
+      "seconds": 0.74,
+      "leaked_thinking": false
     },
     {
       "id": "tool-currency-0",
@@ -139,10 +146,11 @@
             "name": "convert_currency",
             "arguments": "{\"amount\":42,\"from_currency\":\"USD\",\"to_currency\":\"EUR\"}"
           },
-          "id": "rIcSA9HyWLT4dHSz4gtZ457yL7yVw7Lf"
+          "id": "76v3kDYHOJ7heYOr6isI6nfz51o1uvq9"
         }
       ],
-      "seconds": 0.93
+      "seconds": 0.79,
+      "leaked_thinking": false
     },
     {
       "id": "tool-currency-1",
@@ -158,10 +166,11 @@
             "name": "convert_currency",
             "arguments": "{\"amount\":99.5,\"from_currency\":\"GBP\",\"to_currency\":\"JPY\"}"
           },
-          "id": "fdtmbVbwDAmA44OXNzJ9znf7V5JQN144"
+          "id": "3MalXnaxxlc67nW9TrhfazdkGVpHotlW"
         }
       ],
-      "seconds": 1.01
+      "seconds": 0.9,
+      "leaked_thinking": false
     },
     {
       "id": "tool-currency-2",
@@ -177,10 +186,11 @@
             "name": "convert_currency",
             "arguments": "{\"amount\":42,\"from_currency\":\"INR\",\"to_currency\":\"USD\"}"
           },
-          "id": "ekzL78KuEBxzEtDH6NgCQ8PG9cQZDBew"
+          "id": "gpGcErZn1u2E4mHsa1MmMl0whguuTHB7"
         }
       ],
-      "seconds": 0.96
+      "seconds": 0.8,
+      "leaked_thinking": false
     },
     {
       "id": "tool-currency-3",
@@ -196,10 +206,11 @@
             "name": "convert_currency",
             "arguments": "{\"amount\":1000,\"from_currency\":\"CAD\",\"to_currency\":\"MXN\"}"
           },
-          "id": "1Toyc3IsNuTyrQZQOFGC923R4ebByWq4"
+          "id": "tsEbtXXx6C16ZwPP5zWq9vuntFySbSlU"
         }
       ],
-      "seconds": 0.98
+      "seconds": 0.87,
+      "leaked_thinking": false
     },
     {
       "id": "tool-currency-4",
@@ -215,10 +226,11 @@
             "name": "convert_currency",
             "arguments": "{\"amount\":120,\"from_currency\":\"INR\",\"to_currency\":\"USD\"}"
           },
-          "id": "wKQWWFx1OU3RlwuPspmGeFR6lrUtNUjD"
+          "id": "P38GOERPwM1qfFQ9METfO7zHzfUuensO"
         }
       ],
-      "seconds": 0.95
+      "seconds": 0.81,
+      "leaked_thinking": false
     },
     {
       "id": "tool-currency-5",
@@ -234,10 +246,11 @@
             "name": "convert_currency",
             "arguments": "{\"amount\":42,\"from_currency\":\"GBP\",\"to_currency\":\"JPY\"}"
           },
-          "id": "UHQpWokjfaBGBgj4t174hvMRzHB6kxFJ"
+          "id": "1wN43BhlgNgltWN8CRXUbRmSBlzkaFcR"
         }
       ],
-      "seconds": 0.99
+      "seconds": 0.84,
+      "leaked_thinking": false
     },
     {
       "id": "tool-timer-0",
@@ -253,10 +266,11 @@
             "name": "set_timer",
             "arguments": "{\"minutes\":25,\"label\":\"tea\"}"
           },
-          "id": "aTC02lzp5q9grN9WYEmo41qWIXITgoQl"
+          "id": "w4GBTOnirBXZMoT2I6B5UqSDPEuJmHKr"
         }
       ],
-      "seconds": 0.7
+      "seconds": 0.61,
+      "leaked_thinking": false
     },
     {
       "id": "tool-timer-1",
@@ -272,10 +286,11 @@
             "name": "set_timer",
             "arguments": "{\"minutes\":90,\"label\":\"tea\"}"
           },
-          "id": "4MAwQyCxJxQElrlfvoCvEM1tt1B74LJ3"
+          "id": "VmBiRE7XDtqeGGpJbF6rdPnb9hoEWTtZ"
         }
       ],
-      "seconds": 0.7
+      "seconds": 0.59,
+      "leaked_thinking": false
     },
     {
       "id": "tool-timer-2",
@@ -291,10 +306,11 @@
             "name": "set_timer",
             "arguments": "{\"minutes\":90,\"label\":\"laundry\"}"
           },
-          "id": "2gbCqYoiqLMo3drDG21hYpDDiP6sSsva"
+          "id": "h6Rev9lCGUcJSClUaMWB9OObOrqbH1TT"
         }
       ],
-      "seconds": 0.76
+      "seconds": 0.64,
+      "leaked_thinking": false
     },
     {
       "id": "tool-timer-3",
@@ -310,10 +326,11 @@
             "name": "set_timer",
             "arguments": "{\"minutes\":5,\"label\":\"tea\"}"
           },
-          "id": "CaEJwiS3XJIHLuG5klNZdeRXUdHfbGFi"
+          "id": "4J9YHDczexsPy1eYFKzMwRTHQOMutWEp"
         }
       ],
-      "seconds": 0.69
+      "seconds": 0.59,
+      "leaked_thinking": false
     },
     {
       "id": "tool-timer-4",
@@ -329,10 +346,11 @@
             "name": "set_timer",
             "arguments": "{\"minutes\":5,\"label\":\"oven\"}"
           },
-          "id": "nMZzr8d3sTqeBSVllO7mMIjrxnoV5S1V"
+          "id": "P4DlY45Cwq4Tc7qO8fTjsukAo0oXObjn"
         }
       ],
-      "seconds": 0.7
+      "seconds": 0.59,
+      "leaked_thinking": false
     },
     {
       "id": "tool-timer-5",
@@ -348,10 +366,11 @@
             "name": "set_timer",
             "arguments": "{\"minutes\":45,\"label\":\"study break\"}"
           },
-          "id": "Raok1d0dqxnxQUL2vHGo8NEOx2ijsuHB"
+          "id": "tD9pe3Nrf8506onVPSffCMQy6mHNMNtx"
         }
       ],
-      "seconds": 0.76
+      "seconds": 0.64,
+      "leaked_thinking": false
     },
     {
       "id": "tool-booking-0",
@@ -367,10 +386,11 @@
             "name": "book_table",
             "arguments": "{\"restaurant\":\"Blue Lotus\",\"people\":2,\"time\":\"20:30\"}"
           },
-          "id": "Z1jaDZlNcVYRidWUwuqFdLSqLPA6zi6C"
+          "id": "BxHGVNMoKne5I4vzUSwE8jy1YFBepFIi"
         }
       ],
-      "seconds": 0.92
+      "seconds": 0.79,
+      "leaked_thinking": false
     },
     {
       "id": "tool-booking-1",
@@ -386,10 +406,11 @@
             "name": "book_table",
             "arguments": "{\"restaurant\":\"The Grill House\",\"people\":2,\"time\":\"12:00\"}"
           },
-          "id": "W8sycfCjx3HZWbDdQNBX4tiiZPEHHxzx"
+          "id": "F5b7qqv29QZKVOkjz6r2z9kSTSRfiVhK"
         }
       ],
-      "seconds": 0.95
+      "seconds": 0.83,
+      "leaked_thinking": false
     },
     {
       "id": "tool-booking-2",
@@ -405,10 +426,11 @@
             "name": "book_table",
             "arguments": "{\"restaurant\":\"Blue Lotus\",\"people\":2,\"time\":\"12:00\"}"
           },
-          "id": "46mRp2mAqw8TnbYBLbw2vTw7upfRxvPh"
+          "id": "zvQi3noMzru2dl33caG254UtXk9hfXKT"
         }
       ],
-      "seconds": 0.93
+      "seconds": 0.79,
+      "leaked_thinking": false
     },
     {
       "id": "tool-booking-3",
@@ -424,10 +446,11 @@
             "name": "book_table",
             "arguments": "{\"restaurant\":\"The Grill House\",\"people\":2,\"time\":\"19:00\"}"
           },
-          "id": "wD13okBPwc2omQAyi7PvE7GU7MVzyWgt"
+          "id": "bgPT54KqGOFNCE8I1hatxKWjxErQbMNP"
         }
       ],
-      "seconds": 0.95
+      "seconds": 0.82,
+      "leaked_thinking": false
     },
     {
       "id": "tool-booking-4",
@@ -443,10 +466,11 @@
             "name": "book_table",
             "arguments": "{\"restaurant\":\"Sakura\",\"people\":2,\"time\":\"12:00\"}"
           },
-          "id": "e6HeiCaDAo70YCexvo0360VPfQoANPMO"
+          "id": "8pjO6nHayc1rUHxpeYXysHwM95Rtb4xJ"
         }
       ],
-      "seconds": 0.93
+      "seconds": 0.8,
+      "leaked_thinking": false
     },
     {
       "id": "tool-booking-5",
@@ -462,10 +486,11 @@
             "name": "book_table",
             "arguments": "{\"restaurant\":\"Blue Lotus\",\"people\":6,\"time\":\"19:00\"}"
           },
-          "id": "VCQ5BISsJ86grU02FAn7UUu7IoEhEl36"
+          "id": "1DTKUI3BC45dxxEFP2lofFr070bz49Jz"
         }
       ],
-      "seconds": 0.9
+      "seconds": 0.79,
+      "leaked_thinking": false
     },
     {
       "id": "tool-stock-0",
@@ -481,10 +506,11 @@
             "name": "get_stock_price",
             "arguments": "{\"ticker\":\"TSLA\"}"
           },
-          "id": "vz7s6uJXUIaFxnxyU3QWUTEl1Fau8SsG"
+          "id": "393yL9ec3goX1zsBDK2zXN2RamjicPcH"
         }
       ],
-      "seconds": 0.62
+      "seconds": 0.62,
+      "leaked_thinking": false
     },
     {
       "id": "tool-stock-1",
@@ -500,10 +526,11 @@
             "name": "get_stock_price",
             "arguments": "{\"ticker\":\"MSFT\"}"
           },
-          "id": "JF8wa5ugosYXSe3yYC2IqXU3n0UrSH7z"
+          "id": "YEtMNQr6mO21L4ZZ8Jj2BEmds4ILYrQq"
         }
       ],
-      "seconds": 0.62
+      "seconds": 0.54,
+      "leaked_thinking": false
     },
     {
       "id": "tool-stock-2",
@@ -519,10 +546,11 @@
             "name": "get_stock_price",
             "arguments": "{\"ticker\":\"META\"}"
           },
-          "id": "WqjNz5Raqk2Yuc2jsZkZHKuEWNwNoS96"
+          "id": "jjgtSDUJTWNdhkCXqD4e3BZnNSgVyBSM"
         }
       ],
-      "seconds": 0.62
+      "seconds": 0.54,
+      "leaked_thinking": false
     },
     {
       "id": "tool-stock-3",
@@ -538,10 +566,11 @@
             "name": "get_stock_price",
             "arguments": "{\"ticker\":\"AAPL\"}"
           },
-          "id": "XIbrqptktb0yle2BQfucBUfX2MwjCvOK"
+          "id": "ArSONXexWmTsrfPZ7AfG0s3puvBn7t5M"
         }
       ],
-      "seconds": 0.6
+      "seconds": 0.52,
+      "leaked_thinking": false
     },
     {
       "id": "tool-stock-4",
@@ -557,10 +586,11 @@
             "name": "get_stock_price",
             "arguments": "{\"ticker\":\"NVDA\"}"
           },
-          "id": "Crgu7Ea6vAtMLaPp6jA9tbIf0N8oIdVz"
+          "id": "M9IIRW6tvKksdPU5bwTBByQ9PzTp1FCJ"
         }
       ],
-      "seconds": 0.62
+      "seconds": 0.54,
+      "leaked_thinking": false
     },
     {
       "id": "tool-stock-5",
@@ -576,10 +606,11 @@
             "name": "get_stock_price",
             "arguments": "{\"ticker\":\"NVDA\"}"
           },
-          "id": "Wz7NhXTFXrWc4dXyzxNDWk52MoGNUczR"
+          "id": "qMPm3WixkLuBNC2Paf8EMzGDeRCN2YU5"
         }
       ],
-      "seconds": 0.62
+      "seconds": 0.54,
+      "leaked_thinking": false
     },
     {
       "id": "json-person-0",
@@ -589,7 +620,8 @@
       "reason": "ok",
       "content": "{\n  \"name\": \"Amara Okafor\",\n  \"age\": 37,\n  \"city\": \"Cape Town\"\n}",
       "tool_calls": null,
-      "seconds": 0.65
+      "seconds": 0.57,
+      "leaked_thinking": false
     },
     {
       "id": "json-person-1",
@@ -599,7 +631,8 @@
       "reason": "ok",
       "content": "{\n  \"name\": \"Priya Nair\",\n  \"age\": 37,\n  \"city\": \"Berlin\"\n}",
       "tool_calls": null,
-      "seconds": 0.61
+      "seconds": 0.52,
+      "leaked_thinking": false
     },
     {
       "id": "json-person-2",
@@ -609,7 +642,8 @@
       "reason": "ok",
       "content": "{\n  \"name\": \"Omar Haddad\",\n  \"age\": 68,\n  \"city\": \"Seoul\"\n}",
       "tool_calls": null,
-      "seconds": 0.63
+      "seconds": 0.53,
+      "leaked_thinking": false
     },
     {
       "id": "json-person-3",
@@ -619,7 +653,8 @@
       "reason": "ok",
       "content": "{\n  \"name\": \"Kenji Sato\",\n  \"age\": 23,\n  \"city\": \"Berlin\"\n}",
       "tool_calls": null,
-      "seconds": 0.59
+      "seconds": 0.52,
+      "leaked_thinking": false
     },
     {
       "id": "json-person-4",
@@ -629,7 +664,8 @@
       "reason": "ok",
       "content": "{\n  \"name\": \"Maria Lopez\",\n  \"age\": 37,\n  \"city\": \"Seoul\"\n}",
       "tool_calls": null,
-      "seconds": 0.58
+      "seconds": 0.48,
+      "leaked_thinking": false
     },
     {
       "id": "json-person-5",
@@ -639,7 +675,8 @@
       "reason": "ok",
       "content": "{\n  \"name\": \"Omar Haddad\",\n  \"age\": 51,\n  \"city\": \"Seoul\"\n}",
       "tool_calls": null,
-      "seconds": 0.64
+      "seconds": 0.54,
+      "leaked_thinking": false
     },
     {
       "id": "json-person-6",
@@ -649,7 +686,8 @@
       "reason": "ok",
       "content": "{\n  \"name\": \"Liam Walsh\",\n  \"age\": 37,\n  \"city\": \"Chicago\"\n}",
       "tool_calls": null,
-      "seconds": 0.57
+      "seconds": 0.51,
+      "leaked_thinking": false
     },
     {
       "id": "json-person-7",
@@ -659,7 +697,8 @@
       "reason": "ok",
       "content": "{\n  \"name\": \"Omar Haddad\",\n  \"age\": 68,\n  \"city\": \"Berlin\"\n}",
       "tool_calls": null,
-      "seconds": 0.6
+      "seconds": 0.53,
+      "leaked_thinking": false
     },
     {
       "id": "json-person-8",
@@ -669,7 +708,8 @@
       "reason": "ok",
       "content": "{\n  \"name\": \"Kenji Sato\",\n  \"age\": 23,\n  \"city\": \"Cape Town\"\n}",
       "tool_calls": null,
-      "seconds": 0.62
+      "seconds": 0.54,
+      "leaked_thinking": false
     },
     {
       "id": "json-person-9",
@@ -679,7 +719,8 @@
       "reason": "ok",
       "content": "{\n  \"name\": \"Maria Lopez\",\n  \"age\": 68,\n  \"city\": \"Cape Town\"\n}",
       "tool_calls": null,
-      "seconds": 0.58
+      "seconds": 0.51,
+      "leaked_thinking": false
     },
     {
       "id": "json-order-0",
@@ -689,7 +730,8 @@
       "reason": "ok",
       "content": "{\n  \"product\": \"wireless mouse\",\n  \"quantity\": 3,\n  \"express\": true\n}",
       "tool_calls": null,
-      "seconds": 0.54
+      "seconds": 0.48,
+      "leaked_thinking": false
     },
     {
       "id": "json-order-1",
@@ -699,7 +741,8 @@
       "reason": "ok",
       "content": "{\n  \"product\": \"water bottle\",\n  \"quantity\": 3,\n  \"express\": false\n}",
       "tool_calls": null,
-      "seconds": 0.52
+      "seconds": 0.46,
+      "leaked_thinking": false
     },
     {
       "id": "json-order-2",
@@ -709,7 +752,8 @@
       "reason": "ok",
       "content": "{\n  \"product\": \"notebook\",\n  \"quantity\": 1,\n  \"express\": false\n}",
       "tool_calls": null,
-      "seconds": 0.53
+      "seconds": 0.46,
+      "leaked_thinking": false
     },
     {
       "id": "json-order-3",
@@ -719,7 +763,8 @@
       "reason": "ok",
       "content": "{\n  \"product\": \"desk lamp\",\n  \"quantity\": 1,\n  \"express\": false\n}",
       "tool_calls": null,
-      "seconds": 0.55
+      "seconds": 0.47,
+      "leaked_thinking": false
     },
     {
       "id": "json-order-4",
@@ -729,7 +774,8 @@
       "reason": "ok",
       "content": "{\n  \"product\": \"wireless mouse\",\n  \"quantity\": 1,\n  \"express\": false\n}",
       "tool_calls": null,
-      "seconds": 0.55
+      "seconds": 0.46,
+      "leaked_thinking": false
     },
     {
       "id": "json-order-5",
@@ -739,7 +785,8 @@
       "reason": "ok",
       "content": "{\n  \"product\": \"notebook\",\n  \"quantity\": 3,\n  \"express\": false\n}",
       "tool_calls": null,
-      "seconds": 0.53
+      "seconds": 0.45,
+      "leaked_thinking": false
     },
     {
       "id": "json-order-6",
@@ -749,7 +796,8 @@
       "reason": "ok",
       "content": "{\n  \"product\": \"desk lamp\",\n  \"quantity\": 12,\n  \"express\": true\n}",
       "tool_calls": null,
-      "seconds": 0.53
+      "seconds": 0.46,
+      "leaked_thinking": false
     },
     {
       "id": "json-order-7",
@@ -759,7 +807,8 @@
       "reason": "ok",
       "content": "{\n  \"product\": \"wireless mouse\",\n  \"quantity\": 12,\n  \"express\": false\n}\n```",
       "tool_calls": null,
-      "seconds": 0.57
+      "seconds": 0.47,
+      "leaked_thinking": false
     },
     {
       "id": "json-order-8",
@@ -769,7 +818,8 @@
       "reason": "ok",
       "content": "{\n  \"product\": \"wireless mouse\",\n  \"quantity\": 1,\n  \"express\": true\n}",
       "tool_calls": null,
-      "seconds": 0.55
+      "seconds": 0.45,
+      "leaked_thinking": false
     },
     {
       "id": "json-order-9",
@@ -779,7 +829,8 @@
       "reason": "ok",
       "content": "{\n  \"product\": \"desk lamp\",\n  \"quantity\": 1,\n  \"express\": true\n}",
       "tool_calls": null,
-      "seconds": 0.55
+      "seconds": 0.45,
+      "leaked_thinking": false
     },
     {
       "id": "json-event-0",
@@ -789,7 +840,8 @@
       "reason": "ok",
       "content": "{\n  \"event\": \"hackathon\",\n  \"date\": \"2026-12-01\"\n}",
       "tool_calls": null,
-      "seconds": 0.53
+      "seconds": 0.44,
+      "leaked_thinking": false
     },
     {
       "id": "json-event-1",
@@ -799,7 +851,8 @@
       "reason": "ok",
       "content": "{\n  \"event\": \"board meeting\",\n  \"date\": \"2026-03-14\"\n}",
       "tool_calls": null,
-      "seconds": 0.51
+      "seconds": 0.42,
+      "leaked_thinking": false
     },
     {
       "id": "json-event-2",
@@ -809,7 +862,8 @@
       "reason": "ok",
       "content": "{\n  \"event\": \"board meeting\",\n  \"date\": \"2026-12-01\"\n}",
       "tool_calls": null,
-      "seconds": 0.51
+      "seconds": 0.42,
+      "leaked_thinking": false
     },
     {
       "id": "json-event-3",
@@ -819,7 +873,8 @@
       "reason": "ok",
       "content": "{\n  \"event\": \"hackathon\",\n  \"date\": \"2026-07-03\"\n}",
       "tool_calls": null,
-      "seconds": 0.54
+      "seconds": 0.44,
+      "leaked_thinking": false
     },
     {
       "id": "json-event-4",
@@ -829,7 +884,8 @@
       "reason": "ok",
       "content": "{\n  \"event\": \"hackathon\",\n  \"date\": \"2027-01-22\"\n}",
       "tool_calls": null,
-      "seconds": 0.53
+      "seconds": 0.44,
+      "leaked_thinking": false
     },
     {
       "id": "json-event-5",
@@ -839,7 +895,8 @@
       "reason": "ok",
       "content": "{\n  \"event\": \"team offsite\",\n  \"date\": \"2026-07-03\"\n}",
       "tool_calls": null,
-      "seconds": 0.53
+      "seconds": 0.44,
+      "leaked_thinking": false
     },
     {
       "id": "json-event-6",
@@ -849,7 +906,8 @@
       "reason": "ok",
       "content": "{\n  \"event\": \"product launch\",\n  \"date\": \"2027-01-22\"\n}",
       "tool_calls": null,
-      "seconds": 0.51
+      "seconds": 0.42,
+      "leaked_thinking": false
     },
     {
       "id": "json-event-7",
@@ -859,7 +917,8 @@
       "reason": "ok",
       "content": "{\n  \"event\": \"product launch\",\n  \"date\": \"2026-12-01\"\n}",
       "tool_calls": null,
-      "seconds": 0.51
+      "seconds": 0.42,
+      "leaked_thinking": false
     },
     {
       "id": "json-event-8",
@@ -869,7 +928,8 @@
       "reason": "ok",
       "content": "{\n  \"event\": \"hackathon\",\n  \"date\": \"2026-03-14\"\n}",
       "tool_calls": null,
-      "seconds": 0.53
+      "seconds": 0.46,
+      "leaked_thinking": false
     },
     {
       "id": "json-event-9",
@@ -879,7 +939,8 @@
       "reason": "ok",
       "content": "{\n  \"event\": \"board meeting\",\n  \"date\": \"2027-01-22\"\n}",
       "tool_calls": null,
-      "seconds": 0.51
+      "seconds": 0.44,
+      "leaked_thinking": false
     }
   ]
 }

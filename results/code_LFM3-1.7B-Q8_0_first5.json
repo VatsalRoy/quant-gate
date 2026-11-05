@@ -1,0 +1,57 @@
+{
+  "summary": {
+    "n": 5,
+    "pass1_base": 1.0,
+    "pass1_plus": 1.0,
+    "solved_plus": 5,
+    "truncated": 0,
+    "gen_seconds": 16.3
+  },
+  "results": [
+    {
+      "task_id": "HumanEval/0",
+      "solution": "from typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    \n    Args:\n        numbers: A list of floating-point numbers.\n        threshold: The distance below which we consider elements \"close\".\n    \n    Returns:\n        True if there exist at least two distinct elements in `numbers` whose absolute difference is less than `threshold`.\n        False otherwise.\n    \"\"\"\n    # Sort the list to easily check adjacent differences\n    sorted_numbers = sorted(numbers)\n    for i in range(len(sorted_numbers) - 1):\n        if abs(sorted_numbers[i] - sorted_numbers[i + 1]) < threshold:\n            return True\n    return False\n",
+      "reply": "```python\nfrom typing import List\n\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    \n    Args:\n        numbers: A list of floating-point numbers.\n        threshold: The distance below which we consider elements \"close\".\n    \n    Returns:\n        True if there exist at least two distinct elements in `numbers` whose absolute difference is less than `threshold`.\n        False otherwise.\n    \"\"\"\n    # Sort the list to easily check adjacent differences\n    sorted_numbers = sorted(numbers)\n    for i in range(len(sorted_numbers) - 1):\n        if abs(sorted_numbers[i] - sorted_numbers[i + 1]) < threshold:\n            return True\n    return False\n```",
+      "finish_reason": "stop",
+      "seconds": 3.28,
+      "base": true,
+      "plus": true
+    },
+    {
+      "task_id": "HumanEval/1",
+      "solution": "from typing import List\n\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\" Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    separate those group into separate strings and return the list of those.\n    Separate groups are balanced (each open brace is properly closed) and not nested within each other\n    Ignore any spaces in the input string.\n    >>> separate_paren_groups('( ) (( )) (( )( ))')\n    ['()', '(())', '(()())']\n    \"\"\"\n    # Remove all spaces from the input string\n    cleaned = paren_string.replace(\" \", \"\")\n    \n    groups = []\n    current_group = []\n    \n    for char in cleaned:\n        if char == '(':\n            current_group.append(char)\n        elif char == ')':\n            current_group.append(char)\n            # If we just closed a group, check if it's balanced and complete\n            if len(current_group) >= 2 and current_group.count('(') == current_group.count(')'):\n                groups.append(''.join(current_group))\n                current_group = []\n        else:\n            # Ignore any other characters (though problem says only parentheses)\n            pass\n    \n    return groups\n",
+      "reply": "```python\nfrom typing import List\n\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\" Input to this function is a string containing multiple groups of nested parentheses. Your goal is to\n    separate those group into separate strings and return the list of those.\n    Separate groups are balanced (each open brace is properly closed) and not nested within each other\n    Ignore any spaces in the input string.\n    >>> separate_paren_groups('( ) (( )) (( )( ))')\n    ['()', '(())', '(()())']\n    \"\"\"\n    # Remove all spaces from the input string\n    cleaned = paren_string.replace(\" \", \"\")\n    \n    groups = []\n    current_group = []\n    \n    for char in cleaned:\n        if char == '(':\n            current_group.append(char)\n        elif char == ')':\n            current_group.append(char)\n            # If we just closed a group, check if it's balanced and complete\n            if len(current_group) >= 2 and current_group.count('(') == current_group.count(')'):\n                groups.append(''.join(current_group))\n                current_group = []\n        else:\n            # Ignore any other characters (though problem says only parentheses)\n            pass\n    \n    return groups\n```",
+      "finish_reason": "stop",
+      "seconds": 4.91,
+      "base": true,
+      "plus": true
+    },
+    {
+      "task_id": "HumanEval/2",
+      "solution": "def truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    return number - int(number)\n",
+      "reply": "```python\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    return number - int(number)\n```",
+      "finish_reason": "stop",
+      "seconds": 1.78,
+      "base": true,
+      "plus": true
+    },
+    {
+      "task_id": "HumanEval/3",
+      "solution": "from typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account falls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n    balance = 0\n    for operation in operations:\n        balance += operation\n        if balance < 0:\n            return True\n    return False\n",
+      "reply": "```python\nfrom typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account falls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n    balance = 0\n    for operation in operations:\n        balance += operation\n        if balance < 0:\n            return True\n    return False\n```",
+      "finish_reason": "stop",
+      "seconds": 2.87,
+      "base": true,
+      "plus": true
+    },
+    {
+      "task_id": "HumanEval/4",
+      "solution": "from typing import List\n\n\ndef mean_absolute_deviation(numbers: List[float]) -> float:\n    \"\"\" For a given list of input numbers, calculate Mean Absolute Deviation\n    around the mean of this dataset.\n    Mean Absolute Deviation is the average absolute difference between each\n    element and a centerpoint (mean in this case):\n    MAD = average | x - x_mean |\n    >>> mean_absolute_deviation([1.0, 2.0, 3.0, 4.0])\n    1.0\n    \"\"\"\n    if not numbers:\n        return 0.0\n    \n    mean_val = sum(numbers) / len(numbers)\n    deviations = [abs(num - mean_val) for num in numbers]\n    mad = sum(deviations) / len(deviations)\n    \n    return mad\n",
+      "reply": "```python\nfrom typing import List\n\n\ndef mean_absolute_deviation(numbers: List[float]) -> float:\n    \"\"\" For a given list of input numbers, calculate Mean Absolute Deviation\n    around the mean of this dataset.\n    Mean Absolute Deviation is the average absolute difference between each\n    element and a centerpoint (mean in this case):\n    MAD = average | x - x_mean |\n    >>> mean_absolute_deviation([1.0, 2.0, 3.0, 4.0])\n    1.0\n    \"\"\"\n    if not numbers:\n        return 0.0\n    \n    mean_val = sum(numbers) / len(numbers)\n    deviations = [abs(num - mean_val) for num in numbers]\n    mad = sum(deviations) / len(deviations)\n    \n    return mad\n```",
+      "finish_reason": "stop",
+      "seconds": 3.42,
+      "base": true,
+      "plus": true
+    }
+  ]
+}

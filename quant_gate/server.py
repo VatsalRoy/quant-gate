@@ -78,3 +78,12 @@ class LlamaServer:
         if self._log:
             self._log.close()
             self._log = None
+
+def split_think(content: str) -> tuple[str, str]:
+    """Split leaked reasoning ('... </think> answer') from the answer.
+    Returns (leaked_reasoning, answer). leaked_reasoning is '' if there was no leak."""
+    content = content or ""
+    if "</think>" in content:
+        before, _, after = content.rpartition("</think>")
+        return before.replace("<think>", "").strip(), after.strip()
+    return "", content

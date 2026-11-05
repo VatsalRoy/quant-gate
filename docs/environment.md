@@ -26,3 +26,6 @@ All results in this repo were produced on this setup unless a row says otherwise
 
 ## Policy
 llama.cpp is pinned at this build for the whole project. Do not upgrade mid-census.
+
+## Dependencies Version
+- evalplus 0.3.1

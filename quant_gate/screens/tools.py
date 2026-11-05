@@ -2,6 +2,7 @@
 import json
 import re
 import time
+from quant_gate.server import split_think
 
 FENCE_RE = re.compile(r"^```(?:json)?\s*(.*?)\s*```$", re.S)
 
@@ -81,11 +82,14 @@ def run(srv, cases: list[dict], max_tokens: int = 256) -> list[dict]:
     results = []
     for c in cases:
         t0 = time.time()
-        msg, clean = {}, False
+        msg, clean = {}, False 
+        leaked = ""
         try:
             out = srv.chat(c["messages"], max_tokens=max_tokens, tools=c.get("tools"))
             ch = out["choices"][0]
             msg = ch["message"]
+            leaked, answer = split_think(msg.get("content"))
+            msg = {**msg, "content": answer}
             if ch.get("finish_reason") == "length":
                 reason = "truncated"
             elif c["kind"] == "tool":
@@ -99,7 +103,9 @@ def run(srv, cases: list[dict], max_tokens: int = 256) -> list[dict]:
             "reason": reason,
             "content": (msg.get("content") or "")[:500],
             "tool_calls": msg.get("tool_calls"),
-            "seconds": round(time.time() - t0, 2)})
+            "seconds": round(time.time() - t0, 2),
+            "leaked_thinking": bool(leaked),
+            })
     return results
 
 
@@ -116,4 +122,5 @@ def summarize(results: list[dict]) -> dict:
         "clean_rate": rate(results, "clean"),
         "failures": {r["id"]: r["reason"] for r in results if not r["ok"]},
         "unclean": [r["id"] for r in results if r["ok"] and not r["clean"]],
+        "leaked_thinking": sum(r.get("leaked_thinking", False) for r in results),
     }
