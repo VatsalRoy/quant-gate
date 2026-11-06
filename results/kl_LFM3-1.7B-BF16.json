@@ -1,0 +1,8 @@
+{
+  "mean_kld": 0.0,
+  "kld_p99": 3.3e-05,
+  "top1_agree_pct": 100.0,
+  "ppl_q": 23.01091,
+  "ppl_base": 22.993946,
+  "seconds": 27.5
+}

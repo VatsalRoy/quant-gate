@@ -1,0 +1,23 @@
+{
+  "file": "fake-truncated.gguf",
+  "size_bytes": 50000000,
+  "sha256": "5fad168dc450da8e3d04f0071649021b3b8f9afd6cfc3d5ee7d08e0d1a69b9a5",
+  "mode": "screen",
+  "llama_cpp": "version: 0.9.0-dev (build 12128, commit a01dff908)",
+  "settings": {
+    "decoding": "greedy (temperature 0, seed 0)",
+    "thinking": "off; leaked reasoning before </think> stripped",
+    "code_max_tokens": 2048,
+    "tool_max_tokens": 256,
+    "ctx": 8192,
+    "kl": "WikiText-2 test, 100 chunks x 512 tokens, vs BF16 base"
+  },
+  "metadata": {
+    "error": "could not parse GGUF header: cannot reshape array of size 41744224 into shape (128000,2176)"
+  },
+  "verdict": "load_error",
+  "reasons": [
+    "llama-server could not load the file: llama-server exited early (code 1). See results/logs/fake-truncated.log"
+  ],
+  "total_seconds": 4.0
+}

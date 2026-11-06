@@ -8,3 +8,5 @@ results/logs/
 results/code_runs/
 .env
 .ipynb_checkpoints/
+data/kl_text.txt
+data/calib_text.txt

@@ -21,8 +21,6 @@
 |---|---|---|
 | BF16 | 118 (72.0%) | 60 (100%) |
 | Q8_0 | 119 (72.6%) | 60 (100%) |
-BF16 vs Q8_0 code flips: [N] -> paired SE ~[X] pts.
-
 BF16 vs Q8_0 code flips: 5 (2 BF16-only, 3 Q8_0-only) -> paired SE ~1.4 pts.
 Tool/JSON flips: 0.
 
