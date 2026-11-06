@@ -1,0 +1,93 @@
+{
+  "file": "LFM3-1.7B-IQ2_M.gguf",
+  "size_bytes": 651650624,
+  "sha256": "fa50d66d301d8933b65f1f72ccccc4c3ff7ccbfdfb2538ffa28f84303a3c9ac0",
+  "mode": "screen",
+  "llama_cpp": "version: 0.9.0-dev (build 12128, commit a01dff908)",
+  "settings": {
+    "decoding": "greedy (temperature 0, seed 0)",
+    "thinking": "off; leaked reasoning before </think> stripped",
+    "code_max_tokens": 2048,
+    "tool_max_tokens": 256,
+    "ctx": 8192,
+    "kl": "WikiText-2 test, 100 chunks x 512 tokens, vs BF16 base"
+  },
+  "metadata": {
+    "architecture": "lfm3",
+    "file_type": 29,
+    "chat_template_present": true,
+    "chat_template_chars": 12129,
+    "imatrix_used": true,
+    "imatrix": {
+      "quantize.imatrix.file": "/models_out/LFM3-1.7B-GGUF/LFM3-1.7B-imatrix.gguf",
+      "quantize.imatrix.dataset": "/models_out/LFM3-1.7B-GGUF/LFM3-1.7B-calibration-v6.txt",
+      "quantize.imatrix.entries_count": 153,
+      "quantize.imatrix.chunks_count": 486
+    },
+    "tensor_types": {
+      "F32": 144,
+      "IQ2_S": 86,
+      "IQ4_XS": 40,
+      "Q5_K": 8,
+      "IQ3_S": 6,
+      "Q4_K": 2,
+      "Q3_K": 1
+    },
+    "n_tensors": 287
+  },
+  "server_template_present": true,
+  "tool": {
+    "n": 20,
+    "score": 0.85,
+    "tool_score": 0.9,
+    "json_score": 0.8,
+    "clean_rate": 0.9,
+    "failures": {
+      "tool-booking-0": "wrong_value:time",
+      "json-person-2": "truncated",
+      "json-order-0": "truncated"
+    },
+    "unclean": [],
+    "leaked_thinking": 9,
+    "seconds": 23.9
+  },
+  "code": {
+    "n": 15,
+    "pass1_base": 0.133,
+    "pass1_plus": 0.133,
+    "solved_plus": 2,
+    "truncated": 13,
+    "leaked_thinking": 2,
+    "gen_seconds": 407.1,
+    "failed": [
+      "HumanEval/30",
+      "HumanEval/51",
+      "HumanEval/101",
+      "HumanEval/152",
+      "HumanEval/157",
+      "HumanEval/43",
+      "HumanEval/90",
+      "HumanEval/98",
+      "HumanEval/104",
+      "HumanEval/109",
+      "HumanEval/119",
+      "HumanEval/149",
+      "HumanEval/156"
+    ],
+    "seconds": 468.2
+  },
+  "kl": {
+    "mean_kld": 0.599039,
+    "kld_p99": 3.283451,
+    "top1_agree_pct": 63.365,
+    "ppl_q": 33.608695,
+    "ppl_base": 22.993946,
+    "seconds": 38.5
+  },
+  "verdict": "suspect",
+  "reasons": [
+    "code screen 2/15 < 13",
+    "tool screen 17/20 < 18"
+  ],
+  "total_seconds": 534.4
+}

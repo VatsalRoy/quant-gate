@@ -1,0 +1,88 @@
+{
+  "file": "LFM3-1.7B-Q2_K.gguf",
+  "size_bytes": 701310528,
+  "sha256": "27e54b86e2692313961362e378b50a9060797beb12608adc23ffd48060bdd7b8",
+  "mode": "screen",
+  "llama_cpp": "version: 0.9.0-dev (build 12128, commit a01dff908)",
+  "settings": {
+    "decoding": "greedy (temperature 0, seed 0)",
+    "thinking": "off; leaked reasoning before </think> stripped",
+    "code_max_tokens": 2048,
+    "tool_max_tokens": 256,
+    "ctx": 8192,
+    "kl": "WikiText-2 test, 100 chunks x 512 tokens, vs BF16 base"
+  },
+  "metadata": {
+    "architecture": "lfm3",
+    "file_type": 10,
+    "chat_template_present": true,
+    "chat_template_chars": 12129,
+    "imatrix_used": true,
+    "imatrix": {
+      "quantize.imatrix.file": "/models_out/LFM3-1.7B-GGUF/LFM3-1.7B-imatrix.gguf",
+      "quantize.imatrix.dataset": "/models_out/LFM3-1.7B-GGUF/LFM3-1.7B-calibration-v6.txt",
+      "quantize.imatrix.entries_count": 153,
+      "quantize.imatrix.chunks_count": 486
+    },
+    "tensor_types": {
+      "F32": 144,
+      "Q2_K": 85,
+      "Q4_K": 44,
+      "Q3_K": 7,
+      "Q5_K": 7
+    },
+    "n_tensors": 287
+  },
+  "server_template_present": true,
+  "tool": {
+    "n": 20,
+    "score": 0.95,
+    "tool_score": 0.9,
+    "json_score": 1.0,
+    "clean_rate": 0.9,
+    "failures": {
+      "tool-booking-0": "wrong_value:time"
+    },
+    "unclean": [
+      "tool-currency-0",
+      "json-order-1"
+    ],
+    "leaked_thinking": 6,
+    "seconds": 8.2
+  },
+  "code": {
+    "n": 15,
+    "pass1_base": 0.333,
+    "pass1_plus": 0.333,
+    "solved_plus": 5,
+    "truncated": 9,
+    "leaked_thinking": 1,
+    "gen_seconds": 235.9,
+    "failed": [
+      "HumanEval/51",
+      "HumanEval/101",
+      "HumanEval/43",
+      "HumanEval/98",
+      "HumanEval/104",
+      "HumanEval/26",
+      "HumanEval/109",
+      "HumanEval/119",
+      "HumanEval/149",
+      "HumanEval/156"
+    ],
+    "seconds": 296.9
+  },
+  "kl": {
+    "mean_kld": 0.726119,
+    "kld_p99": 4.087848,
+    "top1_agree_pct": 61.153,
+    "ppl_q": 39.965125,
+    "ppl_base": 22.993946,
+    "seconds": 39.0
+  },
+  "verdict": "suspect",
+  "reasons": [
+    "code screen 5/15 < 13"
+  ],
+  "total_seconds": 348.1
+}

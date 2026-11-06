@@ -1,0 +1,88 @@
+{
+  "file": "LFM3-1.7B-IQ3_XXS.gguf",
+  "size_bytes": 780871232,
+  "sha256": "f7c78246eac98f06aa460e4dd3afd3bfb324126ea8a4c2a2c6ddb52536462618",
+  "mode": "screen",
+  "llama_cpp": "version: 0.9.0-dev (build 12128, commit a01dff908)",
+  "settings": {
+    "decoding": "greedy (temperature 0, seed 0)",
+    "thinking": "off; leaked reasoning before </think> stripped",
+    "code_max_tokens": 2048,
+    "tool_max_tokens": 256,
+    "ctx": 8192,
+    "kl": "WikiText-2 test, 100 chunks x 512 tokens, vs BF16 base"
+  },
+  "metadata": {
+    "architecture": "lfm3",
+    "file_type": 23,
+    "chat_template_present": true,
+    "chat_template_chars": 12129,
+    "imatrix_used": true,
+    "imatrix": {
+      "quantize.imatrix.file": "/models_out/LFM3-1.7B-GGUF/LFM3-1.7B-imatrix.gguf",
+      "quantize.imatrix.dataset": "/models_out/LFM3-1.7B-GGUF/LFM3-1.7B-calibration-v6.txt",
+      "quantize.imatrix.entries_count": 153,
+      "quantize.imatrix.chunks_count": 486
+    },
+    "tensor_types": {
+      "F32": 144,
+      "IQ3_XXS": 85,
+      "Q5_K": 32,
+      "IQ4_XS": 18,
+      "Q4_K": 7,
+      "IQ3_S": 1
+    },
+    "n_tensors": 287
+  },
+  "server_template_present": true,
+  "tool": {
+    "n": 20,
+    "score": 0.95,
+    "tool_score": 0.9,
+    "json_score": 1.0,
+    "clean_rate": 0.6,
+    "failures": {
+      "tool-booking-0": "no_tool_call"
+    },
+    "unclean": [
+      "tool-booking-1",
+      "json-person-0",
+      "json-person-1",
+      "json-person-2",
+      "json-person-3",
+      "json-order-1",
+      "json-order-2"
+    ],
+    "leaked_thinking": 2,
+    "seconds": 9.0
+  },
+  "code": {
+    "n": 15,
+    "pass1_base": 0.733,
+    "pass1_plus": 0.733,
+    "solved_plus": 11,
+    "truncated": 4,
+    "leaked_thinking": 2,
+    "gen_seconds": 164.0,
+    "failed": [
+      "HumanEval/152",
+      "HumanEval/90",
+      "HumanEval/109",
+      "HumanEval/156"
+    ],
+    "seconds": 225.0
+  },
+  "kl": {
+    "mean_kld": 0.295402,
+    "kld_p99": 1.82753,
+    "top1_agree_pct": 74.278,
+    "ppl_q": 24.807399,
+    "ppl_base": 22.993946,
+    "seconds": 39.5
+  },
+  "verdict": "suspect",
+  "reasons": [
+    "code screen 11/15 < 13"
+  ],
+  "total_seconds": 277.5
+}

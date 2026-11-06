@@ -1,0 +1,79 @@
+{
+  "file": "LFM3-1.7B-Q3_K_S.gguf",
+  "size_bytes": 811501120,
+  "sha256": "156cbacf85d842be678a50041de93738e06a16c4611a874de5a4415ea8868693",
+  "mode": "screen",
+  "llama_cpp": "version: 0.9.0-dev (build 12128, commit a01dff908)",
+  "settings": {
+    "decoding": "greedy (temperature 0, seed 0)",
+    "thinking": "off; leaked reasoning before </think> stripped",
+    "code_max_tokens": 2048,
+    "tool_max_tokens": 256,
+    "ctx": 8192,
+    "kl": "WikiText-2 test, 100 chunks x 512 tokens, vs BF16 base"
+  },
+  "metadata": {
+    "architecture": "lfm3",
+    "file_type": 11,
+    "chat_template_present": true,
+    "chat_template_chars": 12129,
+    "imatrix_used": true,
+    "imatrix": {
+      "quantize.imatrix.file": "/models_out/LFM3-1.7B-GGUF/LFM3-1.7B-imatrix.gguf",
+      "quantize.imatrix.dataset": "/models_out/LFM3-1.7B-GGUF/LFM3-1.7B-calibration-v6.txt",
+      "quantize.imatrix.entries_count": 153,
+      "quantize.imatrix.chunks_count": 486
+    },
+    "tensor_types": {
+      "F32": 144,
+      "Q3_K": 107,
+      "Q5_K": 30,
+      "Q4_K": 6
+    },
+    "n_tensors": 287
+  },
+  "server_template_present": true,
+  "tool": {
+    "n": 20,
+    "score": 1.0,
+    "tool_score": 1.0,
+    "json_score": 1.0,
+    "clean_rate": 1.0,
+    "failures": {},
+    "unclean": [],
+    "leaked_thinking": 0,
+    "seconds": 8.1
+  },
+  "code": {
+    "n": 15,
+    "pass1_base": 0.533,
+    "pass1_plus": 0.533,
+    "solved_plus": 8,
+    "truncated": 5,
+    "leaked_thinking": 3,
+    "gen_seconds": 234.8,
+    "failed": [
+      "HumanEval/152",
+      "HumanEval/43",
+      "HumanEval/98",
+      "HumanEval/104",
+      "HumanEval/26",
+      "HumanEval/109",
+      "HumanEval/156"
+    ],
+    "seconds": 295.9
+  },
+  "kl": {
+    "mean_kld": 0.374252,
+    "kld_p99": 2.325918,
+    "top1_agree_pct": 71.361,
+    "ppl_q": 28.255428,
+    "ppl_base": 22.993946,
+    "seconds": 39.4
+  },
+  "verdict": "suspect",
+  "reasons": [
+    "code screen 8/15 < 13"
+  ],
+  "total_seconds": 347.4
+}

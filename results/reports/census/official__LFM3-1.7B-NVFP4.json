@@ -1,0 +1,103 @@
+{
+  "file": "LFM3-1.7B-NVFP4.gguf",
+  "size_bytes": 1280019776,
+  "sha256": "462c2379586a45b30fe3dbfa30e6ff08cbb440734d6934689e24e4fe59a67bec",
+  "mode": "screen",
+  "llama_cpp": "version: 0.9.0-dev (build 12128, commit a01dff908)",
+  "settings": {
+    "decoding": "greedy (temperature 0, seed 0)",
+    "thinking": "off; leaked reasoning before </think> stripped",
+    "code_max_tokens": 2048,
+    "tool_max_tokens": 256,
+    "ctx": 8192,
+    "kl": "WikiText-2 test, 100 chunks x 512 tokens, vs BF16 base"
+  },
+  "metadata": {
+    "architecture": "lfm3",
+    "file_type": 7,
+    "chat_template_present": true,
+    "chat_template_chars": 12129,
+    "imatrix_used": false,
+    "imatrix": {},
+    "tensor_types": {
+      "F32": 277,
+      "Q8_0": 82,
+      "NVFP4": 72
+    },
+    "n_tensors": 431
+  },
+  "server_template_present": true,
+  "tool": {
+    "n": 20,
+    "score": 0.0,
+    "tool_score": 0.0,
+    "json_score": 0.0,
+    "clean_rate": 0.0,
+    "failures": {
+      "tool-weather-0": "truncated",
+      "tool-weather-1": "truncated",
+      "tool-currency-0": "truncated",
+      "tool-currency-1": "truncated",
+      "tool-timer-0": "truncated",
+      "tool-timer-1": "truncated",
+      "tool-booking-0": "truncated",
+      "tool-booking-1": "truncated",
+      "tool-stock-0": "truncated",
+      "tool-stock-1": "truncated",
+      "json-person-0": "truncated",
+      "json-person-1": "truncated",
+      "json-person-2": "truncated",
+      "json-person-3": "truncated",
+      "json-order-0": "truncated",
+      "json-order-1": "truncated",
+      "json-order-2": "truncated",
+      "json-event-0": "truncated",
+      "json-event-1": "truncated",
+      "json-event-2": "truncated"
+    },
+    "unclean": [],
+    "leaked_thinking": 0,
+    "seconds": 191.7
+  },
+  "code": {
+    "n": 15,
+    "pass1_base": 0.0,
+    "pass1_plus": 0.0,
+    "solved_plus": 0,
+    "truncated": 15,
+    "leaked_thinking": 0,
+    "gen_seconds": 1165.5,
+    "failed": [
+      "HumanEval/30",
+      "HumanEval/51",
+      "HumanEval/101",
+      "HumanEval/152",
+      "HumanEval/157",
+      "HumanEval/8",
+      "HumanEval/43",
+      "HumanEval/90",
+      "HumanEval/98",
+      "HumanEval/104",
+      "HumanEval/26",
+      "HumanEval/109",
+      "HumanEval/119",
+      "HumanEval/149",
+      "HumanEval/156"
+    ],
+    "seconds": 1226.7
+  },
+  "kl": {
+    "mean_kld": 0.097398,
+    "kld_p99": 0.701927,
+    "top1_agree_pct": 84.373,
+    "ppl_q": 24.244569,
+    "ppl_base": 22.993946,
+    "seconds": 116.2
+  },
+  "verdict": "suspect",
+  "reasons": [
+    "code screen 0/15 < 13",
+    "tool screen 0/20 < 18"
+  ],
+  "total_seconds": 1538.6
+}

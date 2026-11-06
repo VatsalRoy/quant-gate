@@ -1,0 +1,85 @@
+{
+  "file": "LFM3-1.7B-IQ3_M.gguf",
+  "size_bytes": 925533760,
+  "sha256": "c7e43a40e424e95b920136912aea8203e1ac2d1f860cd5297f633fc67c1eb1f0",
+  "mode": "screen",
+  "llama_cpp": "version: 0.9.0-dev (build 12128, commit a01dff908)",
+  "settings": {
+    "decoding": "greedy (temperature 0, seed 0)",
+    "thinking": "off; leaked reasoning before </think> stripped",
+    "code_max_tokens": 2048,
+    "tool_max_tokens": 256,
+    "ctx": 8192,
+    "kl": "WikiText-2 test, 100 chunks x 512 tokens, vs BF16 base"
+  },
+  "metadata": {
+    "architecture": "lfm3",
+    "file_type": 27,
+    "chat_template_present": true,
+    "chat_template_chars": 12129,
+    "imatrix_used": true,
+    "imatrix": {
+      "quantize.imatrix.file": "/models_out/LFM3-1.7B-GGUF/LFM3-1.7B-imatrix.gguf",
+      "quantize.imatrix.dataset": "/models_out/LFM3-1.7B-GGUF/LFM3-1.7B-calibration-v6.txt",
+      "quantize.imatrix.entries_count": 153,
+      "quantize.imatrix.chunks_count": 486
+    },
+    "tensor_types": {
+      "F32": 144,
+      "IQ3_S": 67,
+      "Q5_K": 62,
+      "Q6_K": 7,
+      "IQ4_XS": 5,
+      "Q4_K": 1,
+      "Q8_0": 1
+    },
+    "n_tensors": 287
+  },
+  "server_template_present": true,
+  "tool": {
+    "n": 20,
+    "score": 0.9,
+    "tool_score": 0.9,
+    "json_score": 0.9,
+    "clean_rate": 0.8,
+    "failures": {
+      "tool-weather-1": "no_tool_call",
+      "json-order-0": "not_json"
+    },
+    "unclean": [
+      "tool-weather-0",
+      "tool-currency-0"
+    ],
+    "leaked_thinking": 3,
+    "seconds": 11.2
+  },
+  "code": {
+    "n": 15,
+    "pass1_base": 0.733,
+    "pass1_plus": 0.733,
+    "solved_plus": 11,
+    "truncated": 2,
+    "leaked_thinking": 1,
+    "gen_seconds": 103.9,
+    "failed": [
+      "HumanEval/90",
+      "HumanEval/98",
+      "HumanEval/109",
+      "HumanEval/156"
+    ],
+    "seconds": 184.9
+  },
+  "kl": {
+    "mean_kld": 0.177193,
+    "kld_p99": 1.256954,
+    "top1_agree_pct": 79.737,
+    "ppl_q": 26.248321,
+    "ppl_base": 22.993946,
+    "seconds": 36.1
+  },
+  "verdict": "suspect",
+  "reasons": [
+    "code screen 11/15 < 13"
+  ],
+  "total_seconds": 236.2
+}

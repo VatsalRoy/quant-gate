@@ -1,0 +1,80 @@
+{
+  "file": "LFM3-1.7B-IQ3_XS.gguf",
+  "size_bytes": 812467776,
+  "sha256": "fbb780bd43e515b7ea997fb88e1aaa4ba7dba358b8f62f423d58a1a65237873c",
+  "mode": "screen",
+  "llama_cpp": "version: 0.9.0-dev (build 12128, commit a01dff908)",
+  "settings": {
+    "decoding": "greedy (temperature 0, seed 0)",
+    "thinking": "off; leaked reasoning before </think> stripped",
+    "code_max_tokens": 2048,
+    "tool_max_tokens": 256,
+    "ctx": 8192,
+    "kl": "WikiText-2 test, 100 chunks x 512 tokens, vs BF16 base"
+  },
+  "metadata": {
+    "architecture": "lfm3",
+    "file_type": 22,
+    "chat_template_present": true,
+    "chat_template_chars": 12129,
+    "imatrix_used": true,
+    "imatrix": {
+      "quantize.imatrix.file": "/models_out/LFM3-1.7B-GGUF/LFM3-1.7B-imatrix.gguf",
+      "quantize.imatrix.dataset": "/models_out/LFM3-1.7B-GGUF/LFM3-1.7B-calibration-v6.txt",
+      "quantize.imatrix.entries_count": 153,
+      "quantize.imatrix.chunks_count": 486
+    },
+    "tensor_types": {
+      "F32": 144,
+      "IQ3_S": 104,
+      "Q5_K": 26,
+      "Q6_K": 8,
+      "IQ4_XS": 3,
+      "Q4_K": 2
+    },
+    "n_tensors": 287
+  },
+  "server_template_present": true,
+  "tool": {
+    "n": 20,
+    "score": 1.0,
+    "tool_score": 1.0,
+    "json_score": 1.0,
+    "clean_rate": 1.0,
+    "failures": {},
+    "unclean": [],
+    "leaked_thinking": 2,
+    "seconds": 10.0
+  },
+  "code": {
+    "n": 15,
+    "pass1_base": 0.6,
+    "pass1_plus": 0.6,
+    "solved_plus": 9,
+    "truncated": 5,
+    "leaked_thinking": 1,
+    "gen_seconds": 211.0,
+    "failed": [
+      "HumanEval/152",
+      "HumanEval/43",
+      "HumanEval/90",
+      "HumanEval/98",
+      "HumanEval/109",
+      "HumanEval/156"
+    ],
+    "seconds": 272.0
+  },
+  "kl": {
+    "mean_kld": 0.260379,
+    "kld_p99": 1.706489,
+    "top1_agree_pct": 75.902,
+    "ppl_q": 23.839933,
+    "ppl_base": 22.993946,
+    "seconds": 44.3
+  },
+  "verdict": "suspect",
+  "reasons": [
+    "code screen 9/15 < 13"
+  ],
+  "total_seconds": 330.4
+}

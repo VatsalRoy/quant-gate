@@ -1,0 +1,75 @@
+{
+  "file": "LFM3-1.7B-IQ4_NL.gguf",
+  "size_bytes": 1115637312,
+  "sha256": "abc725bbb8c18638f712fd9c410b1dfff41377722dc7eb88277730c6b3c7d444",
+  "mode": "screen",
+  "llama_cpp": "version: 0.9.0-dev (build 12128, commit a01dff908)",
+  "settings": {
+    "decoding": "greedy (temperature 0, seed 0)",
+    "thinking": "off; leaked reasoning before </think> stripped",
+    "code_max_tokens": 2048,
+    "tool_max_tokens": 256,
+    "ctx": 8192,
+    "kl": "WikiText-2 test, 100 chunks x 512 tokens, vs BF16 base"
+  },
+  "metadata": {
+    "architecture": "lfm3",
+    "file_type": 25,
+    "chat_template_present": true,
+    "chat_template_chars": 12129,
+    "imatrix_used": true,
+    "imatrix": {
+      "quantize.imatrix.file": "/models_out/LFM3-1.7B-GGUF/LFM3-1.7B-imatrix.gguf",
+      "quantize.imatrix.dataset": "/models_out/LFM3-1.7B-GGUF/LFM3-1.7B-calibration-v6.txt",
+      "quantize.imatrix.entries_count": 153,
+      "quantize.imatrix.chunks_count": 486
+    },
+    "tensor_types": {
+      "F32": 144,
+      "IQ4_NL": 86,
+      "Q8_0": 35,
+      "Q6_K": 20,
+      "Q5_K": 2
+    },
+    "n_tensors": 287
+  },
+  "server_template_present": true,
+  "tool": {
+    "n": 20,
+    "score": 1.0,
+    "tool_score": 1.0,
+    "json_score": 1.0,
+    "clean_rate": 1.0,
+    "failures": {},
+    "unclean": [],
+    "leaked_thinking": 0,
+    "seconds": 8.7
+  },
+  "code": {
+    "n": 15,
+    "pass1_base": 0.867,
+    "pass1_plus": 0.867,
+    "solved_plus": 13,
+    "truncated": 0,
+    "leaked_thinking": 0,
+    "gen_seconds": 27.6,
+    "failed": [
+      "HumanEval/98",
+      "HumanEval/26"
+    ],
+    "seconds": 88.7
+  },
+  "kl": {
+    "mean_kld": 0.087482,
+    "kld_p99": 0.775651,
+    "top1_agree_pct": 85.878,
+    "ppl_q": 24.079281,
+    "ppl_base": 22.993946,
+    "seconds": 33.5
+  },
+  "verdict": "pass",
+  "reasons": [
+    "code 13/15, tool 20/20"
+  ],
+  "total_seconds": 134.8
+}

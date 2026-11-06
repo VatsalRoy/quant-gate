@@ -1,0 +1,73 @@
+{
+  "file": "LFM3-1.7B.Q3_K_M.gguf",
+  "size_bytes": 914899488,
+  "sha256": "8f3b3a9c16a9d09483070d5895c162b400ba16200872185e43f97ea9edaa88f8",
+  "mode": "screen",
+  "llama_cpp": "version: 0.9.0-dev (build 12128, commit a01dff908)",
+  "settings": {
+    "decoding": "greedy (temperature 0, seed 0)",
+    "thinking": "off; leaked reasoning before </think> stripped",
+    "code_max_tokens": 2048,
+    "tool_max_tokens": 256,
+    "ctx": 8192,
+    "kl": "WikiText-2 test, 100 chunks x 512 tokens, vs BF16 base"
+  },
+  "metadata": {
+    "architecture": "lfm3",
+    "file_type": 12,
+    "chat_template_present": true,
+    "chat_template_chars": 12129,
+    "imatrix_used": false,
+    "imatrix": {},
+    "tensor_types": {
+      "F32": 133,
+      "Q3_K": 107,
+      "Q4_K": 43,
+      "Q5_K": 3,
+      "Q6_K": 1
+    },
+    "n_tensors": 287
+  },
+  "server_template_present": true,
+  "tool": {
+    "n": 20,
+    "score": 1.0,
+    "tool_score": 1.0,
+    "json_score": 1.0,
+    "clean_rate": 1.0,
+    "failures": {},
+    "unclean": [],
+    "leaked_thinking": 0,
+    "seconds": 8.8
+  },
+  "code": {
+    "n": 15,
+    "pass1_base": 0.667,
+    "pass1_plus": 0.667,
+    "solved_plus": 10,
+    "truncated": 4,
+    "leaked_thinking": 3,
+    "gen_seconds": 141.1,
+    "failed": [
+      "HumanEval/152",
+      "HumanEval/98",
+      "HumanEval/104",
+      "HumanEval/109",
+      "HumanEval/156"
+    ],
+    "seconds": 202.1
+  },
+  "kl": {
+    "mean_kld": 0.347819,
+    "kld_p99": 2.06408,
+    "top1_agree_pct": 72.145,
+    "ppl_q": 28.108373,
+    "ppl_base": 22.993946,
+    "seconds": 28.2
+  },
+  "verdict": "suspect",
+  "reasons": [
+    "code screen 10/15 < 13"
+  ],
+  "total_seconds": 243.6
+}
