@@ -3,9 +3,17 @@ import subprocess
 import time
 from pathlib import Path
 from quant_gate.config import tool
+import socket
 
 import requests
 
+class HarnessError(Exception):
+    """The test setup is wrong (not the model file)."""
+
+
+def _port_in_use(port: int) -> bool:
+    with socket.socket() as s:
+        return s.connect_ex(("127.0.0.1", port)) == 0
 
 class LlamaServer:
     def __init__(self, model_path, port=8080, ctx=8192, binary="llama-server",
@@ -29,6 +37,9 @@ class LlamaServer:
         self.stop()
 
     def start(self, timeout=300):
+        if _port_in_use(self.port):
+            raise HarnessError(f"port {self.port} is already in use (another llama-server?). "
+                               f"Run: pkill llama-server")
         if not self.model_path.exists():
             raise FileNotFoundError(self.model_path)
         self.log_path.parent.mkdir(parents=True, exist_ok=True)
@@ -46,6 +57,11 @@ class LlamaServer:
                     f"See {self.log_path}")
             try:
                 if requests.get(f"{self.url}/health", timeout=2).status_code == 200:
+                    mp = self.props().get("model_path")
+                    if mp and Path(mp).resolve() != self.model_path.resolve():
+                        self.stop()
+                        raise HarnessError(f"server on port {self.port} is serving {mp}, "
+                                           f"not {self.model_path}")
                     return
             except requests.ConnectionError:
                 pass

@@ -9,3 +9,10 @@
   tool while taking ~27 min (vs ~4 min typical), generating until the token limit on
   every item. A full run would take 3+ hours to confirm a 0% result, so it was replaced
   by a targeted diagnosis (new vs old llama.cpp, Metal vs CPU); see results.
+
+  - During NVFP4 diagnosis, one early run returned coherent text. It could not be
+  reproduced: 8/8 later runs with fresh servers (port and model-path checks active)
+  returned garbage on both Metal and CPU. No stray server was found afterwards.
+  The early run is treated as a harness artifact and not used as evidence.
+  The harness now refuses to start if the port is busy and verifies which model
+  the server is serving (HarnessError, exit code 3).

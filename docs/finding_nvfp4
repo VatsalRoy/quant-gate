@@ -1,0 +1,20 @@
+# NVFP4: "reads fine, writes garbage"
+
+File: LiquidAI/LFM3-1.7B-GGUF / LFM3-1.7B-NVFP4.gguf (SHA256 matches inventory)
+Runtime: llama.cpp b12128 (commit a01dff908), Apple M5
+
+| Check | Result |
+|---|---|
+| Tokenizer, stop token, chat template | Identical to official Q8_0 |
+| KL vs BF16 (llama-perplexity, -ub 512 and -ub 1) | 0.097, top-1 84% (looks like a normal 4-bit file) |
+| Generation, llama-server, Metal and CPU | "GGGG..." every time (8/8 fresh-server runs) |
+| Generation, plain text without chat template | "GGGG..." |
+| Generation with ctx 512/2048/8192, flash-attn on/off, --swa-full | "GGGG..." under every setting |
+| Old llama.cpp b11960 (card says unsupported) | "GGGG..." |
+| Gate screen | 0/15 code, 0/20 tool -> SUSPECT; full run skipped (3+ h to confirm 0%) |
+
+Conclusion: on this runtime the file is unusable for generation, yet its KL score
+is in the normal range for 4-bit files. A KL-only gate would have passed it.
+Root cause not isolated: same weights and same text are scored normally by
+llama-perplexity but produce garbage in llama-server under every tested setting.
+Card notes NVFP4 targets NVIDIA Blackwell; behaviour there was not tested.
