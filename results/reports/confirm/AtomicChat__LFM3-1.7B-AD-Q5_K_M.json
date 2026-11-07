@@ -1,0 +1,119 @@
+{
+  "file": "LFM3-1.7B-AD-Q5_K_M.gguf",
+  "size_bytes": 1310481792,
+  "sha256": "321d5c78733dd41d892092fc74773db9be1e44a6ecf29c62c636f57e30ecf1ba",
+  "mode": "full",
+  "llama_cpp": "version: 0.9.0-dev (build 12128, commit a01dff908)",
+  "settings": {
+    "decoding": "greedy (temperature 0, seed 0)",
+    "thinking": "off; leaked reasoning before </think> stripped",
+    "code_max_tokens": 2048,
+    "tool_max_tokens": 256,
+    "ctx": 8192,
+    "kl": "WikiText-2 test, 100 chunks x 512 tokens, vs BF16 base"
+  },
+  "metadata": {
+    "architecture": "lfm3",
+    "file_type": 17,
+    "chat_template_present": true,
+    "chat_template_chars": 12129,
+    "imatrix_used": true,
+    "imatrix": {
+      "quantize.imatrix.file": "/work/LFM3-1.7B/imatrix/imatrix.gguf",
+      "quantize.imatrix.dataset": "/work/LFM3-1.7B/corpus/calib_train.txt",
+      "quantize.imatrix.entries_count": 153,
+      "quantize.imatrix.chunks_count": 9233
+    },
+    "tensor_types": {
+      "F32": 133,
+      "Q5_K": 79,
+      "Q6_K": 42,
+      "Q8_0": 33
+    },
+    "n_tensors": 287
+  },
+  "server_template_present": true,
+  "tool": {
+    "n": 60,
+    "score": 1.0,
+    "tool_score": 1.0,
+    "json_score": 1.0,
+    "clean_rate": 0.983,
+    "failures": {},
+    "unclean": [
+      "json-order-7"
+    ],
+    "leaked_thinking": 0,
+    "seconds": 27.8
+  },
+  "code": {
+    "n": 164,
+    "pass1_base": 0.762,
+    "pass1_plus": 0.732,
+    "solved_plus": 120,
+    "truncated": 17,
+    "leaked_thinking": 2,
+    "gen_seconds": 1292.8,
+    "failed": [
+      "HumanEval/9",
+      "HumanEval/19",
+      "HumanEval/22",
+      "HumanEval/32",
+      "HumanEval/39",
+      "HumanEval/41",
+      "HumanEval/54",
+      "HumanEval/65",
+      "HumanEval/75",
+      "HumanEval/76",
+      "HumanEval/77",
+      "HumanEval/83",
+      "HumanEval/86",
+      "HumanEval/91",
+      "HumanEval/93",
+      "HumanEval/97",
+      "HumanEval/99",
+      "HumanEval/100",
+      "HumanEval/107",
+      "HumanEval/109",
+      "HumanEval/110",
+      "HumanEval/115",
+      "HumanEval/116",
+      "HumanEval/122",
+      "HumanEval/124",
+      "HumanEval/126",
+      "HumanEval/127",
+      "HumanEval/128",
+      "HumanEval/129",
+      "HumanEval/130",
+      "HumanEval/131",
+      "HumanEval/132",
+      "HumanEval/133",
+      "HumanEval/134",
+      "HumanEval/135",
+      "HumanEval/137",
+      "HumanEval/139",
+      "HumanEval/140",
+      "HumanEval/145",
+      "HumanEval/147",
+      "HumanEval/154",
+      "HumanEval/158",
+      "HumanEval/160",
+      "HumanEval/163"
+    ],
+    "seconds": 1353.9
+  },
+  "kl": {
+    "mean_kld": 0.023156,
+    "kld_p99": 0.198305,
+    "top1_agree_pct": 92.659,
+    "ppl_q": 23.25282,
+    "ppl_base": 22.993946,
+    "seconds": 35.4
+  },
+  "verdict": "functional",
+  "reasons": [
+    "code 120/164 (functional >= 110, non-functional < 59; BF16 118)",
+    "tool 60/60 (functional >= 57, non-functional < 30)"
+  ],
+  "total_seconds": 1421.1
+}
