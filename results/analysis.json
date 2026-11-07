@@ -1,0 +1,144 @@
+{
+  "screen": {
+    "passers_sampled": 10,
+    "misses": 1,
+    "miss_files": [
+      "official/Q5_K_M"
+    ],
+    "miss_rate_wilson95": [
+      0.018,
+      0.404
+    ],
+    "suspects_confirmed": 12,
+    "false_alarms": 2,
+    "false_alarm_files": [
+      "AtomicChat/AD-IQ4_XS",
+      "bartowski/IQ4_XS"
+    ],
+    "false_alarm_rate_wilson95": [
+      0.047,
+      0.448
+    ],
+    "median_screen_seconds": 264.4,
+    "median_full_seconds": 1862.45
+  },
+  "H3": {
+    "files_with_verdict": 25,
+    "spearman_kl_vs_full_code": -0.841,
+    "best_kl_cutoff": 0.120972,
+    "kl_cutoff_errors": 3,
+    "kl_cutoff_wrong": [
+      "official/QAD-Q4_0 (KL 0.263731, functional)",
+      "official/Q5_K_M (KL 0.040011, degraded)",
+      "official/NVFP4 (KL 0.097398, non_functional)"
+    ],
+    "task_screen_errors": 3,
+    "task_screen_wrong": [
+      "AtomicChat/AD-IQ4_XS (screen suspect, full functional)",
+      "bartowski/IQ4_XS (screen suspect, full functional)",
+      "official/Q5_K_M (screen pass, full degraded)"
+    ]
+  },
+  "H2_pairs": [
+    {
+      "quant": "Q3_K_L",
+      "kl_imatrix": 0.201958,
+      "kl_plain": 0.309556,
+      "kl_reduction_pct": 34.8,
+      "code_full_imatrix": 96.0,
+      "code_full_plain": 77.0,
+      "plain_from": "prithivMLmods"
+    },
+    {
+      "quant": "Q3_K_M",
+      "kl_imatrix": 0.237272,
+      "kl_plain": 0.347819,
+      "kl_reduction_pct": 31.8,
+      "code_full_imatrix": 96.0,
+      "code_full_plain": 74.0,
+      "plain_from": "prithivMLmods"
+    },
+    {
+      "quant": "Q4_K_M",
+      "kl_imatrix": 0.081215,
+      "kl_plain": 0.118626,
+      "kl_reduction_pct": 31.5,
+      "code_full_imatrix": NaN,
+      "code_full_plain": NaN,
+      "plain_from": "official"
+    },
+    {
+      "quant": "Q4_K_S",
+      "kl_imatrix": 0.107014,
+      "kl_plain": 0.130104,
+      "kl_reduction_pct": 17.7,
+      "code_full_imatrix": NaN,
+      "code_full_plain": NaN,
+      "plain_from": "prithivMLmods"
+    },
+    {
+      "quant": "Q5_K_M",
+      "kl_imatrix": 0.01795,
+      "kl_plain": 0.040011,
+      "kl_reduction_pct": 55.1,
+      "code_full_imatrix": 113.0,
+      "code_full_plain": 108.0,
+      "plain_from": "official"
+    },
+    {
+      "quant": "Q5_K_S",
+      "kl_imatrix": 0.025768,
+      "kl_plain": 0.045578,
+      "kl_reduction_pct": 43.5,
+      "code_full_imatrix": 110.0,
+      "code_full_plain": NaN,
+      "plain_from": "prithivMLmods"
+    },
+    {
+      "quant": "Q6_K",
+      "kl_imatrix": 0.007873,
+      "kl_plain": 0.013394,
+      "kl_reduction_pct": 41.2,
+      "code_full_imatrix": NaN,
+      "code_full_plain": NaN,
+      "plain_from": "official"
+    },
+    {
+      "quant": "Q8_0",
+      "kl_imatrix": 0.001736,
+      "kl_plain": 0.001736,
+      "kl_reduction_pct": 0.0,
+      "code_full_imatrix": NaN,
+      "code_full_plain": 119.0,
+      "plain_from": "official"
+    }
+  ],
+  "H1_full_by_bpw": [
+    " 3.01 bpw  bartowski     IQ2_M      code  18  tool 56  non_functional",
+    " 3.24 bpw  bartowski     Q2_K       code  42  tool 59  non_functional",
+    " 3.61 bpw  bartowski     IQ3_XXS    code  68  tool 57  degraded",
+    " 3.75 bpw  bartowski     Q3_K_S     code  70  tool 60  degraded",
+    " 3.76 bpw  bartowski     IQ3_XS     code  85  tool 60  degraded",
+    " 3.92 bpw  bartowski     Q3_K_M     code  96  tool 60  degraded",
+    " 4.10 bpw  bartowski     Q3_K_L     code  96  tool 60  degraded",
+    " 4.23 bpw  prithivMLmods Q3_K_M     code  74  tool 60  degraded",
+    " 4.28 bpw  bartowski     IQ3_M      code 104  tool 51  degraded",
+    " 4.47 bpw  prithivMLmods Q3_K_L     code  77  tool 60  degraded",
+    " 4.61 bpw  bartowski     IQ4_XS     code 111  tool 60  functional",
+    " 4.85 bpw  official      QAD-Q4_0   code 116  tool 60  functional",
+    " 5.05 bpw  AtomicChat    AD-IQ4_XS  code 113  tool 60  functional",
+    " 5.24 bpw  AtomicChat    AD-Q4_K_M  code 116  tool 60  functional",
+    " 5.50 bpw  bartowski     Q4_K_L     code 113  tool 60  functional",
+    " 5.82 bpw  official      Q5_K_M     code 108  tool 60  degraded",
+    " 5.86 bpw  bartowski     Q5_K_S     code 110  tool 60  functional",
+    " 6.06 bpw  AtomicChat    AD-Q5_K_M  code 120  tool 60  functional",
+    " 6.25 bpw  bartowski     Q5_K_M     code 113  tool 60  functional",
+    " 7.34 bpw  AtomicChat    AD-Q6_K    code 110  tool 60  functional",
+    " 8.54 bpw  official      Q8_0       code 119  tool 60  functional",
+    " 8.54 bpw  AtomicChat    Q8_0       code 116  tool 60  functional",
+    "16.03 bpw  bartowski     BF16       code 118  tool 60  functional",
+    "16.03 bpw  official      BF16       code 118  tool 60  functional"
+  ],
+  "secondary_leak_vs_bpw_spearman": -0.542,
+  "secondary_trunc_vs_bpw_spearman": -0.681
+}
