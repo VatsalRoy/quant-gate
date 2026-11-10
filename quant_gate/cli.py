@@ -4,6 +4,7 @@ import hashlib
 import json
 import sys
 import time
+import traceback
 from pathlib import Path
 
 from quant_gate import thresholds as T
@@ -177,6 +178,7 @@ def main(argv=None):
     try:
         rep = run_gate(args.model, args.kl_base, args.full, args.port, args.fail_fast, args.cpu)
     except Exception as e:
+        traceback.print_exc()
         print(f"HARNESS ERROR (the tester failed, not the file): {e}", file=sys.stderr)
         sys.exit(3)
 
