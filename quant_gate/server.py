@@ -16,7 +16,7 @@ def _port_in_use(port: int) -> bool:
         return s.connect_ex(("127.0.0.1", port)) == 0
 
 class LlamaServer:
-    def __init__(self, model_path, port=8080, ctx=8192, binary="llama-server",
+    def __init__(self, model_path, port=8080, ctx=8192, binary=None,
                  log_path=None, extra_args=None):
         self.model_path = Path(model_path)
         self.port = port

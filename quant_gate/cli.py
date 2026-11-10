@@ -8,7 +8,7 @@ import traceback
 from pathlib import Path
 
 from quant_gate import thresholds as T
-from quant_gate.config import llama_version
+from quant_gate.config import binary_version
 from quant_gate.metadata import read_metadata
 from quant_gate.screens import code, kl, tools
 from quant_gate.server import LlamaServer
@@ -73,7 +73,6 @@ def run_gate(model, kl_base=None, full=False, port=8080, fail_fast=False, cpu=Fa
         "size_bytes": model.stat().st_size,
         "sha256": sha256(model),
         "mode": "full" if full else "screen",
-        "llama_cpp": llama_version(),
         "settings": T.SETTINGS,
         "metadata": read_metadata(model),
     }
@@ -86,6 +85,8 @@ def run_gate(model, kl_base=None, full=False, port=8080, fail_fast=False, cpu=Fa
 
     # 1) can llama-server load it at all?
     srv = LlamaServer(model, port=port, extra_args=["-ngl", "0"] if cpu else None)
+    rep["server_binary"] = str(srv.binary)
+    rep["llama_cpp"] = binary_version(srv.binary)
     try:
         srv.start()
     except (RuntimeError, TimeoutError) as e:

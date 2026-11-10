@@ -1,0 +1,67 @@
+{
+  "file": "LFM3-1.7B-rebuild-Q2_K-plain.gguf",
+  "size_bytes": 750154528,
+  "sha256": "0d92cd2877f2c69818e20ed5c7fa96c38ef99f01633ffdc6a380598247bb4ed6",
+  "mode": "screen",
+  "llama_cpp": "version: 0.9.0-dev (build 12128, commit a01dff908)",
+  "settings": {
+    "decoding": "greedy (temperature 0, seed 0)",
+    "thinking": "off; leaked reasoning before </think> stripped",
+    "code_max_tokens": 2048,
+    "tool_max_tokens": 256,
+    "ctx": 8192,
+    "kl": "WikiText-2 test, 100 chunks x 512 tokens, vs BF16 base"
+  },
+  "metadata": {
+    "architecture": "lfm3",
+    "file_type": 10,
+    "chat_template_present": true,
+    "chat_template_chars": 12129,
+    "imatrix_used": false,
+    "imatrix": {},
+    "tensor_types": {
+      "F32": 133,
+      "Q2_K": 107,
+      "Q3_K": 46,
+      "Q6_K": 1
+    },
+    "n_tensors": 287
+  },
+  "server_template_present": true,
+  "tool": {
+    "n": 20,
+    "score": 0.6,
+    "tool_score": 0.6,
+    "json_score": 0.6,
+    "clean_rate": 0.25,
+    "failures": {
+      "tool-currency-1": "no_tool_call",
+      "tool-booking-0": "truncated",
+      "tool-booking-1": "wrong_value:time",
+      "tool-stock-1": "truncated",
+      "json-person-0": "truncated",
+      "json-person-3": "truncated",
+      "json-order-2": "truncated",
+      "json-event-0": "truncated"
+    },
+    "unclean": [
+      "tool-weather-0",
+      "tool-currency-0",
+      "json-person-1",
+      "json-person-2",
+      "json-order-0",
+      "json-order-1",
+      "json-event-1",
+      "json-event-2"
+    ],
+    "leaked_thinking": 1,
+    "seconds": 25.4
+  },
+  "code": null,
+  "fail_fast": "code screen skipped: tool screen already below threshold",
+  "verdict": "suspect",
+  "reasons": [
+    "tool screen 12/20 < 18 (fail-fast: code screen skipped)"
+  ],
+  "total_seconds": 29.9
+}

@@ -18,8 +18,12 @@ def tool(name: str) -> str:
     return str(p)
 
 
-def llama_version(name: str = "llama-server") -> str:
-    """The version line, so every result can record exactly which build made it."""
-    out = subprocess.run([tool(name), "--version"], capture_output=True, text=True)
+def binary_version(path) -> str:
+    """Version line of a specific llama.cpp binary."""
+    out = subprocess.run([str(path), "--version"], capture_output=True, text=True, errors="replace")
     text = (out.stdout + out.stderr).strip()
     return next((l for l in text.splitlines() if l.startswith("version")), text)
+
+
+def llama_version(name: str = "llama-server") -> str:
+    return binary_version(tool(name))

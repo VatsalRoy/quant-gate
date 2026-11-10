@@ -35,7 +35,7 @@
     "failures": {},
     "unclean": [],
     "leaked_thinking": 0,
-    "seconds": 12.0
+    "seconds": 31.4
   },
   "code": {
     "n": 15,
@@ -44,21 +44,15 @@
     "solved_plus": 15,
     "truncated": 0,
     "leaked_thinking": 0,
-    "gen_seconds": 47.9,
+    "gen_seconds": 91.5,
+    "n_planned": 15,
+    "stopped_early": false,
     "failed": [],
-    "seconds": 108.9
-  },
-  "kl": {
-    "mean_kld": 0.001736,
-    "kld_p99": 0.017255,
-    "top1_agree_pct": 98.153,
-    "ppl_q": 22.968399,
-    "ppl_base": 22.993946,
-    "seconds": 27.2
+    "seconds": 152.6
   },
   "verdict": "pass",
   "reasons": [
     "code 15/15, tool 20/20"
   ],
-  "total_seconds": 152.9
+  "total_seconds": 189.7
 }
