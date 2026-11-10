@@ -24,19 +24,20 @@ def mcnemar_p(b, c):
     return round(min(1.0, 2 * tail), 4)
 
 
+PAIRS = [("plain", "imatrix"), ("plain", "bartimatrix"), ("imatrix", "bartimatrix")]
 out = []
 for q in ["Q2_K", "Q3_K_S", "Q3_K_M"]:
-    (pc, pt), (ic, it) = failed_sets(q, "plain"), failed_sets(q, "imatrix")
-    for kind, allids, pf, imf in [("code", ALL_CODE, pc, ic), ("tool", ALL_TOOL, pt, it)]:
-        only_plain = len(imf - pf)    # plain solved, imatrix failed
-        only_imx = len(pf - imf)      # imatrix solved, plain failed
-        row = {"quant": q, "kind": kind,
-               "plain_solved": len(allids) - len(pf), "imatrix_solved": len(allids) - len(imf),
-               "only_plain_solved": only_plain, "only_imatrix_solved": only_imx,
-               "p_value": mcnemar_p(only_plain, only_imx)}
-        out.append(row)
-        print(f"{q:7s} {kind:4s}  plain {row['plain_solved']:3d}  imatrix {row['imatrix_solved']:3d}  "
-              f"| only-plain {only_plain:3d}  only-imatrix {only_imx:3d}  p = {row['p_value']}")
+    for a, b in PAIRS:
+        (ac, at), (bc, bt) = failed_sets(q, a), failed_sets(q, b)
+        for kind, allids, fa, fb in [("code", ALL_CODE, ac, bc), ("tool", ALL_TOOL, at, bt)]:
+            only_a = len(fb - fa)   # a solved, b failed
+            only_b = len(fa - fb)   # b solved, a failed
+            row = {"quant": q, "kind": kind, "a": a, "b": b,
+                   "a_solved": len(allids) - len(fa), "b_solved": len(allids) - len(fb),
+                   "only_a": only_a, "only_b": only_b, "p_value": mcnemar_p(only_a, only_b)}
+            out.append(row)
+            print(f"{q:7s} {kind:4s} {a:>11s} {row['a_solved']:3d} vs {b:<11s} {row['b_solved']:3d} "
+                  f"| only-{a} {only_a:3d}  only-{b} {only_b:3d}  p = {row['p_value']}")
 
 Path("results/rebuild_stats.json").write_text(json.dumps(out, indent=2))
 print("\nSaved results/rebuild_stats.json")

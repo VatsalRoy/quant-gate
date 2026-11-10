@@ -5,3 +5,6 @@ Q3_K_S,plain,854876704,0.515198,66.294,96,60,degraded,10,20,suspect,48,17,2715.2
 Q3_K_S,imatrix,854876960,0.395169,70.529,83,60,degraded,11,20,suspect,62,42,3547.3
 Q3_K_M,plain,914899488,0.348803,72.09,76,60,degraded,9,20,suspect,74,29,3940.6
 Q3_K_M,imatrix,914899744,0.257512,75.675,86,60,degraded,8,20,suspect,35,8,2090.9
+Q2_K,bartimatrix,750154784,0.907994,56.431,51,51,non_functional,5,17,suspect,93,20,2719.0
+Q3_K_S,bartimatrix,854876960,0.433804,69.337,78,60,degraded,10,20,suspect,71,47,3316.8
+Q3_K_M,bartimatrix,914899744,0.260807,75.6,104,60,degraded,12,20,suspect,27,5,1508.6

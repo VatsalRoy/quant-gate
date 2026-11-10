@@ -224,5 +224,30 @@ if pairs:
     ax.legend(fontsize=8)
     fig.tight_layout(); fig.savefig(F / "fig5_imatrix_pairs.png", dpi=150); plt.close(fig)
 
+# Fig 6: controlled rebuild
+rb = pd.read_csv(R / "rebuild.csv")
+arms = ["plain", "imatrix", "bartimatrix"]
+names = {"plain": "no imatrix",
+         "imatrix": "imatrix: WikiText (200 chunks)",
+         "bartimatrix": "imatrix: bartowski calib (486 chunks)"}
+quants = ["Q2_K", "Q3_K_S", "Q3_K_M"]
+fig, ax = plt.subplots(figsize=(8, 4.5))
+w = 0.27
+for i, arm in enumerate(arms):
+    vals = [rb[(rb["quant"] == q) & (rb["arm"] == arm)]["code_full"].iloc[0] for q in quants]
+    xs = [j + (i - 1) * w for j in range(len(quants))]
+    ax.bar(xs, vals, width=w, label=names[arm])
+    for x, v in zip(xs, vals):
+        ax.text(x, v + 1, str(int(v)), ha="center", fontsize=7)
+ax.axhline(T.BF16_CODE_PLUS, color="gray", lw=1)
+ax.text(2.45, T.BF16_CODE_PLUS + 1, "BF16", fontsize=7)
+ax.axhline(T.FUNCTIONAL_CODE_MIN, color="gray", ls="--", lw=1)
+ax.set_ylim(0, 130)
+ax.set_xticks(range(len(quants))); ax.set_xticklabels(quants)
+ax.set_ylabel("HumanEval+ solved (of 164)")
+ax.set_title("Controlled rebuild: same tensor mix, only the importance matrix differs")
+ax.legend(fontsize=7, loc="upper left")
+fig.tight_layout(); fig.savefig(F / "fig6_rebuild.png", dpi=150); plt.close(fig)
+
 print(json.dumps(out, indent=2, default=str))
 print(f"\nSaved results/summary.csv, results/analysis.json, and {len(list(F.glob('*.png')))} figures")

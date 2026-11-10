@@ -31,7 +31,7 @@ if CSV.exists():
     done = {(r["quant"], r["arm"]) for r in csv.DictReader(CSV.open())}
 
 for q in ["Q2_K", "Q3_K_S", "Q3_K_M"]:
-    for arm in ["plain", "imatrix"]:
+    for arm in ["plain", "imatrix", "bartimatrix"]:
         if (q, arm) in done:
             continue
         path = OUT / f"LFM3-1.7B-rebuild-{q}-{arm}.gguf"
