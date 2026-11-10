@@ -1,0 +1,115 @@
+name: "quant-gate"
+description: "Functional acceptance test for a quantized GGUF model: pass/fail in minutes."
+branding:
+  icon: check-circle
+  color: green
+
+inputs:
+  model:
+    description: "Path to a local .gguf file (use this OR hf-repo + hf-file)"
+    default: ""
+  hf-repo:
+    description: "Hugging Face repo to download the file from"
+    default: ""
+  hf-file:
+    description: "File name inside hf-repo"
+    default: ""
+  mode:
+    description: "screen (fast) or full"
+    default: "screen"
+  fail-fast:
+    description: "Stop as soon as the file cannot pass (screen mode)"
+    default: "true"
+  llama-cpp-ref:
+    description: "llama.cpp git tag to build"
+    default: "b12128"
+
+outputs:
+  verdict:
+    description: "pass / suspect / functional / degraded / non_functional / packaging / load_error"
+    value: ${{ steps.gate.outputs.verdict }}
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+    - name: Cache llama.cpp build
+      id: cache
+      uses: actions/cache@v4
+      with:
+        path: ${{ runner.temp }}/llama.cpp/build/bin
+        key: llama-cpp-${{ inputs.llama-cpp-ref }}-${{ runner.os }}-${{ runner.arch }}-portable
+
+    - name: Build llama.cpp (first run only)
+      if: steps.cache.outputs.cache-hit != 'true'
+      shell: bash
+      run: |
+        git clone --depth 1 --branch "${{ inputs.llama-cpp-ref }}" \
+          https://github.com/ggml-org/llama.cpp.git "$RUNNER_TEMP/llama.cpp"
+        cmake -S "$RUNNER_TEMP/llama.cpp" -B "$RUNNER_TEMP/llama.cpp/build" \
+          -DCMAKE_BUILD_TYPE=Release -DGGML_NATIVE=OFF -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=OFF
+        cmake --build "$RUNNER_TEMP/llama.cpp/build" --config Release -j \
+          --target llama-server llama-perplexity
+
+    - name: Install quant-gate
+      shell: bash
+      run: pip install -e "${{ github.action_path }}/.."
+
+    - name: Resolve model file
+      id: model
+      shell: bash
+      env:
+        IN_MODEL: ${{ inputs.model }}
+        HF_REPO: ${{ inputs.hf-repo }}
+        HF_FILE: ${{ inputs.hf-file }}
+      run: |
+        if [ -n "$IN_MODEL" ]; then
+          echo "path=$IN_MODEL" >> "$GITHUB_OUTPUT"
+        else
+          P=$(python -c "import sys; from huggingface_hub import hf_hub_download as d; \
+            print(d(sys.argv[1], sys.argv[2], local_dir=sys.argv[3]))" \
+            "$HF_REPO" "$HF_FILE" "$RUNNER_TEMP/models" | tail -1)
+          echo "path=$P" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Run quant-gate
+      id: gate
+      shell: bash
+      env:
+        QG_LLAMA_BIN_DIR: ${{ runner.temp }}/llama.cpp/build/bin
+      run: |
+        ARGS=""
+        [ "${{ inputs.mode }}" = "full" ] && ARGS="$ARGS --full"
+        [ "${{ inputs.fail-fast }}" = "true" ] && ARGS="$ARGS --fail-fast"
+        REPORT="$RUNNER_TEMP/quant-gate-report.json"
+        set +e
+        quant-gate run "${{ steps.model.outputs.path }}" $ARGS --out "$REPORT"
+        CODE=$?
+        set -e
+        echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
+        if [ -f "$REPORT" ]; then
+          python -c "import json,sys; print('verdict=' + json.load(open(sys.argv[1]))['verdict'])" \
+            "$REPORT" >> "$GITHUB_OUTPUT"
+        else
+          echo "verdict=harness_error" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Write job summary
+      if: always()
+      shell: bash
+      run: python "${{ github.action_path }}/summary.py" "$RUNNER_TEMP/quant-gate-report.json" >> "$GITHUB_STEP_SUMMARY"
+
+    - name: Upload report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: quant-gate-report-${{ github.job }}
+        path: ${{ runner.temp }}/quant-gate-report.json
+        if-no-files-found: ignore
+
+    - name: Enforce verdict
+      shell: bash
+      run: exit ${{ steps.gate.outputs.exit_code }}

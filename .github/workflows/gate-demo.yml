@@ -1,0 +1,30 @@
+name: quant-gate demo
+
+on:
+  workflow_dispatch:   # run manually from the Actions tab
+
+jobs:
+  pass-example:
+    name: "pass example: official Q8_0"
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./action
+        with:
+          hf-repo: LiquidAI/LFM3-1.7B-GGUF
+          hf-file: LFM3-1.7B-Q8_0.gguf
+
+  fail-example:
+    name: "fail example: Q2_K without imatrix (expected to FAIL)"
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./action
+        with:
+          hf-repo: vatsal-roy-29/LFM3-1.7B-Q2_K-no-imatrix-BROKEN
+          hf-file: LFM3-1.7B-rebuild-Q2_K-plain.gguf
+          # no-upload alternative:
+          # hf-repo: bartowski/LFM3-1.7B-GGUF
+          # hf-file: LFM3-1.7B-IQ2_M.gguf

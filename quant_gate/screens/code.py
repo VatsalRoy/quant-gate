@@ -35,7 +35,8 @@ def extract_solution(task: dict, reply: str) -> str:
     return "\n".join(missing + [code])
 
 
-def generate(srv, tasks: dict, task_ids: list[str], max_tokens: int = 2048) -> list[dict]:
+def generate(srv, tasks: dict, task_ids: list[str], max_tokens: int = 2048,
+             max_truncated: int | None = None) -> list[dict]:
     samples = []
     for tid in task_ids:
         t = tasks[tid]
@@ -55,6 +56,8 @@ def generate(srv, tasks: dict, task_ids: list[str], max_tokens: int = 2048) -> l
             "leaked_chars": len(leaked),
             "finish_reason": ch.get("finish_reason"),
             "seconds": round(time.time() - t0, 2)})
+        if max_truncated is not None and sum(s["finish_reason"] == "length" for s in samples) > max_truncated:
+            break  # can no longer reach the screen threshold (truncated = fail)
     return samples
 
 
