@@ -1,0 +1,66 @@
+{
+  "llama_cpp": "version: 0.9.0-dev (build 12128, commit a01dff908)",
+  "source": "models/LFM3-1.7B-BF16.gguf",
+  "calibration": "data/calib_text.txt",
+  "steps": [
+    {
+      "name": "Q2_K_plain",
+      "cmd": "/Users/vatsalroy/Projects/llama.cpp/build/bin/llama-quantize models/LFM3-1.7B-BF16.gguf models/rebuild/LFM3-1.7B-rebuild-Q2_K-plain.gguf Q2_K",
+      "seconds": 6.0
+    },
+    {
+      "name": "Q2_K_imatrix",
+      "cmd": "/Users/vatsalroy/Projects/llama.cpp/build/bin/llama-quantize --imatrix models/rebuild/lfm3-wikitext-train.imatrix.gguf models/LFM3-1.7B-BF16.gguf models/rebuild/LFM3-1.7B-rebuild-Q2_K-imatrix.gguf Q2_K",
+      "seconds": 11.7
+    },
+    {
+      "name": "Q3_K_S_plain",
+      "cmd": "/Users/vatsalroy/Projects/llama.cpp/build/bin/llama-quantize models/LFM3-1.7B-BF16.gguf models/rebuild/LFM3-1.7B-rebuild-Q3_K_S-plain.gguf Q3_K_S",
+      "seconds": 3.4
+    },
+    {
+      "name": "Q3_K_S_imatrix",
+      "cmd": "/Users/vatsalroy/Projects/llama.cpp/build/bin/llama-quantize --imatrix models/rebuild/lfm3-wikitext-train.imatrix.gguf models/LFM3-1.7B-BF16.gguf models/rebuild/LFM3-1.7B-rebuild-Q3_K_S-imatrix.gguf Q3_K_S",
+      "seconds": 5.5
+    },
+    {
+      "name": "Q3_K_M_plain",
+      "cmd": "/Users/vatsalroy/Projects/llama.cpp/build/bin/llama-quantize models/LFM3-1.7B-BF16.gguf models/rebuild/LFM3-1.7B-rebuild-Q3_K_M-plain.gguf Q3_K_M",
+      "seconds": 4.7
+    },
+    {
+      "name": "Q3_K_M_imatrix",
+      "cmd": "/Users/vatsalroy/Projects/llama.cpp/build/bin/llama-quantize --imatrix models/rebuild/lfm3-wikitext-train.imatrix.gguf models/LFM3-1.7B-BF16.gguf models/rebuild/LFM3-1.7B-rebuild-Q3_K_M-imatrix.gguf Q3_K_M",
+      "seconds": 8.0
+    }
+  ],
+  "checks": [
+    {
+      "quant": "Q2_K",
+      "plain_has_imatrix_meta": false,
+      "imatrix_has_imatrix_meta": true,
+      "tensors_with_different_type": 0,
+      "size_plain_bytes": 750154528,
+      "size_imatrix_bytes": 750154784,
+      "tensor_types": "F32:133;Q2_K:107;Q3_K:46;Q6_K:1"
+    },
+    {
+      "quant": "Q3_K_S",
+      "plain_has_imatrix_meta": false,
+      "imatrix_has_imatrix_meta": true,
+      "tensors_with_different_type": 0,
+      "size_plain_bytes": 854876704,
+      "size_imatrix_bytes": 854876960,
+      "tensor_types": "Q3_K:153;F32:133;Q6_K:1"
+    },
+    {
+      "quant": "Q3_K_M",
+      "plain_has_imatrix_meta": false,
+      "imatrix_has_imatrix_meta": true,
+      "tensors_with_different_type": 0,
+      "size_plain_bytes": 914899488,
+      "size_imatrix_bytes": 914899744,
+      "tensor_types": "F32:133;Q3_K:107;Q4_K:43;Q5_K:3;Q6_K:1"
+    }
+  ]
+}

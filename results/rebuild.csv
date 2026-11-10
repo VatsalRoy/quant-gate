@@ -1,0 +1,7 @@
+quant,arm,size_bytes,mean_kld,top1_agree_pct,code_full,tool_full,full_verdict,code_screen,tool_screen,screen_verdict,code_truncated,code_leaked,seconds
+Q2_K,plain,750154528,1.100503,51.529,1,36,non_functional,0,12,suspect,162,3,4402.8
+Q2_K,imatrix,750154784,0.838791,57.616,55,60,non_functional,8,20,suspect,89,20,2985.7
+Q3_K_S,plain,854876704,0.515198,66.294,96,60,degraded,10,20,suspect,48,17,2715.2
+Q3_K_S,imatrix,854876960,0.395169,70.529,83,60,degraded,11,20,suspect,62,42,3547.3
+Q3_K_M,plain,914899488,0.348803,72.09,76,60,degraded,9,20,suspect,74,29,3940.6
+Q3_K_M,imatrix,914899744,0.257512,75.675,86,60,degraded,8,20,suspect,35,8,2090.9
