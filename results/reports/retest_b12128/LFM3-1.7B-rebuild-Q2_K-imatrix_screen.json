@@ -1,0 +1,74 @@
+{
+  "file": "LFM3-1.7B-rebuild-Q2_K-imatrix.gguf",
+  "size_bytes": 750154784,
+  "sha256": "657625dfb02716c54bbfdf72ae8818a714cf68cd3bb464d8f9105e2beef62649",
+  "mode": "screen",
+  "settings": {
+    "decoding": "greedy (temperature 0, seed 0)",
+    "thinking": "off; leaked reasoning before </think> stripped",
+    "code_max_tokens": 2048,
+    "tool_max_tokens": 256,
+    "ctx": 8192,
+    "kl": "WikiText-2 test, 100 chunks x 512 tokens, vs BF16 base"
+  },
+  "metadata": {
+    "architecture": "lfm3",
+    "file_type": 10,
+    "chat_template_present": true,
+    "chat_template_chars": 12129,
+    "imatrix_used": true,
+    "imatrix": {
+      "quantize.imatrix.file": "models/rebuild/lfm3-wikitext-train.imatrix.gguf",
+      "quantize.imatrix.dataset": "data/calib_text.txt",
+      "quantize.imatrix.entries_count": 153,
+      "quantize.imatrix.chunks_count": 200
+    },
+    "tensor_types": {
+      "F32": 133,
+      "Q2_K": 107,
+      "Q3_K": 46,
+      "Q6_K": 1
+    },
+    "n_tensors": 287
+  },
+  "server_binary": "/Users/vatsalroy/Projects/llama.cpp/build/bin/llama-server",
+  "llama_cpp": "version: 0.9.0-dev (build 12128, commit a01dff908)",
+  "server_template_present": true,
+  "tool": {
+    "n": 20,
+    "score": 1.0,
+    "tool_score": 1.0,
+    "json_score": 1.0,
+    "clean_rate": 1.0,
+    "failures": {},
+    "unclean": [],
+    "leaked_thinking": 2,
+    "seconds": 14.9
+  },
+  "code": {
+    "n": 15,
+    "pass1_base": 0.6,
+    "pass1_plus": 0.533,
+    "solved_plus": 8,
+    "truncated": 5,
+    "leaked_thinking": 4,
+    "gen_seconds": 208.6,
+    "n_planned": 15,
+    "stopped_early": false,
+    "failed": [
+      "HumanEval/51",
+      "HumanEval/101",
+      "HumanEval/157",
+      "HumanEval/90",
+      "HumanEval/109",
+      "HumanEval/119",
+      "HumanEval/156"
+    ],
+    "seconds": 269.8
+  },
+  "verdict": "suspect",
+  "reasons": [
+    "code screen 8/15 < 13"
+  ],
+  "total_seconds": 288.6
+}

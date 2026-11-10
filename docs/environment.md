@@ -29,3 +29,17 @@ llama.cpp is pinned at this build for the whole project. Do not upgrade mid-cens
 
 ## Dependencies Version
 - evalplus 0.3.1
+
+## Correction (found 2026-11-10)
+A bug made `LlamaServer` launch whichever `llama-server` was first on PATH (the Homebrew
+build b11960) instead of the pinned source build b12128.
+- Affected: all *generation* results (baselines, census, confirmation, rebuild gate runs,
+  local CLI tests) before the fix commit.
+- Not affected: KL (llama-perplexity) and quantization/imatrix (llama-quantize,
+  llama-imatrix), which always used b12128.
+- Version-sensitivity check on b12128: 4 files rerun on the screen gave identical results
+  (Q8_0 15/15·20/20; rebuild Q3_K_M plain 9/15·20/20; rebuild Q2_K imatrix 8/15·20/20;
+  rebuild Q3_K_M bartowski-imatrix 12/15·20/20). Generation results are therefore reported
+  as measured on b11960.
+- Exception: NVFP4 needs ≥ b12088 and was retested on b12128 (see findings_nvfp4.md).
+- Every report now records the binary actually launched (`server_binary`, `llama_cpp`).

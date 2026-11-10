@@ -1,0 +1,71 @@
+{
+  "file": "LFM3-1.7B-rebuild-Q3_K_M-bartimatrix.gguf",
+  "size_bytes": 914899744,
+  "sha256": "d005ca87eeb2b94fb119d89fbbdb314b7f7f5b9330695efa628577141cd211b0",
+  "mode": "screen",
+  "settings": {
+    "decoding": "greedy (temperature 0, seed 0)",
+    "thinking": "off; leaked reasoning before </think> stripped",
+    "code_max_tokens": 2048,
+    "tool_max_tokens": 256,
+    "ctx": 8192,
+    "kl": "WikiText-2 test, 100 chunks x 512 tokens, vs BF16 base"
+  },
+  "metadata": {
+    "architecture": "lfm3",
+    "file_type": 12,
+    "chat_template_present": true,
+    "chat_template_chars": 12129,
+    "imatrix_used": true,
+    "imatrix": {
+      "quantize.imatrix.file": "models/rebuild/LFM3-1.7B-imatrix.gguf",
+      "quantize.imatrix.dataset": "/models_out/LFM3-1.7B-GGUF/LFM3-1.7B-calibration-v6.txt",
+      "quantize.imatrix.entries_count": 153,
+      "quantize.imatrix.chunks_count": 486
+    },
+    "tensor_types": {
+      "F32": 133,
+      "Q3_K": 107,
+      "Q4_K": 43,
+      "Q5_K": 3,
+      "Q6_K": 1
+    },
+    "n_tensors": 287
+  },
+  "server_binary": "/Users/vatsalroy/Projects/llama.cpp/build/bin/llama-server",
+  "llama_cpp": "version: 0.9.0-dev (build 12128, commit a01dff908)",
+  "server_template_present": true,
+  "tool": {
+    "n": 20,
+    "score": 1.0,
+    "tool_score": 1.0,
+    "json_score": 1.0,
+    "clean_rate": 1.0,
+    "failures": {},
+    "unclean": [],
+    "leaked_thinking": 0,
+    "seconds": 13.0
+  },
+  "code": {
+    "n": 15,
+    "pass1_base": 0.8,
+    "pass1_plus": 0.8,
+    "solved_plus": 12,
+    "truncated": 0,
+    "leaked_thinking": 0,
+    "gen_seconds": 65.1,
+    "n_planned": 15,
+    "stopped_early": false,
+    "failed": [
+      "HumanEval/101",
+      "HumanEval/26",
+      "HumanEval/156"
+    ],
+    "seconds": 126.2
+  },
+  "verdict": "suspect",
+  "reasons": [
+    "code screen 12/15 < 13"
+  ],
+  "total_seconds": 143.1
+}

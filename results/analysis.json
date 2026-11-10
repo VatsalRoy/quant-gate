@@ -9,28 +9,28 @@
       0.018,
       0.404
     ],
-    "suspects_confirmed": 12,
+    "suspects_confirmed": 13,
     "false_alarms": 2,
     "false_alarm_files": [
       "AtomicChat/AD-IQ4_XS",
       "bartowski/IQ4_XS"
     ],
     "false_alarm_rate_wilson95": [
-      0.047,
-      0.448
+      0.043,
+      0.422
     ],
     "median_screen_seconds": 264.4,
     "median_full_seconds": 1862.45
   },
   "H3": {
     "files_with_verdict": 25,
-    "spearman_kl_vs_full_code": -0.841,
+    "spearman_kl_vs_full_code": -0.839,
     "best_kl_cutoff": 0.120972,
     "kl_cutoff_errors": 3,
     "kl_cutoff_wrong": [
       "official/QAD-Q4_0 (KL 0.263731, functional)",
       "official/Q5_K_M (KL 0.040011, degraded)",
-      "official/NVFP4 (KL 0.097398, non_functional)"
+      "official/NVFP4 (KL 0.097398, degraded)"
     ],
     "task_screen_errors": 3,
     "task_screen_wrong": [
@@ -131,11 +131,12 @@
     " 5.50 bpw  bartowski     Q4_K_L     code 113  tool 60  functional",
     " 5.82 bpw  official      Q5_K_M     code 108  tool 60  degraded",
     " 5.86 bpw  bartowski     Q5_K_S     code 110  tool 60  functional",
+    " 5.92 bpw  official      NVFP4      code  99  tool 60  degraded",
     " 6.06 bpw  AtomicChat    AD-Q5_K_M  code 120  tool 60  functional",
     " 6.25 bpw  bartowski     Q5_K_M     code 113  tool 60  functional",
     " 7.34 bpw  AtomicChat    AD-Q6_K    code 110  tool 60  functional",
-    " 8.54 bpw  official      Q8_0       code 119  tool 60  functional",
     " 8.54 bpw  AtomicChat    Q8_0       code 116  tool 60  functional",
+    " 8.54 bpw  official      Q8_0       code 119  tool 60  functional",
     "16.03 bpw  bartowski     BF16       code 118  tool 60  functional",
     "16.03 bpw  official      BF16       code 118  tool 60  functional"
   ],

@@ -5,14 +5,17 @@
   before running and was recorded as "timeout", giving a false 0% score. The harness
   now aborts if that happens.
 
-  - NVFP4 was not run on the full benchmark. On the screen it scored 0/15 code and 0/20
+- NVFP4 was not run on the full benchmark. On the screen it scored 0/15 code and 0/20
   tool while taking ~27 min (vs ~4 min typical), generating until the token limit on
   every item. A full run would take 3+ hours to confirm a 0% result, so it was replaced
   by a targeted diagnosis (new vs old llama.cpp, Metal vs CPU); see results.
 
-  - During NVFP4 diagnosis, one early run returned coherent text. It could not be
+- During NVFP4 diagnosis, one early run returned coherent text. It could not be
   reproduced: 8/8 later runs with fresh servers (port and model-path checks active)
   returned garbage on both Metal and CPU. No stray server was found afterwards.
   The early run is treated as a harness artifact and not used as evidence.
   The harness now refuses to start if the port is busy and verifies which model
   the server is serving (HarnessError, exit code 3).
+
+- Generation results were measured on llama.cpp b11960 because of a PATH bug (see
+  environment.md). A 4-file check on the pinned b12128 gave identical screen results.

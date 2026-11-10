@@ -60,11 +60,20 @@ df = census.merge(full, on=["repo", "filename"], how="left")
 df["variant"] = df["variant"].fillna("")
 df["imatrix"] = df["imatrix_in_metadata"].astype(str) == "True"
 df["label"] = df.apply(lambda r: (r["variant"] + "-" if r["variant"] else "") + r["quant"], axis=1)
-df["full_verdict"] = [full_verdict(c, t) for c, t in zip(df["code_full"], df["tool_full"])]
+# NVFP4: the census ran it on b11960 (PATH bug, unsupported) -> garbage.
+# Use the b12128 retest for both screen and full results.
 nv = df["filename"].str.contains("NVFP4")
-df.loc[nv, "full_verdict"] = "non_functional"   # screen 0/15, 0/20; full skipped (see findings_nvfp4.md)
+RT = R / "reports" / "retest_b12128"
+rs = json.load(open(RT / "LFM3-1.7B-NVFP4_screen.json"))
+rf = json.load(open(RT / "LFM3-1.7B-NVFP4_full.json"))
+df.loc[nv, "code_screen"] = rs["code"]["solved_plus"]
+df.loc[nv, "tool_screen"] = round(rs["tool"]["score"] * rs["tool"]["n"])
+df.loc[nv, "verdict"] = rs["verdict"]
+df.loc[nv, "code_full"] = rf["code"]["solved_plus"]
+df.loc[nv, "tool_full"] = round(rf["tool"]["score"] * rf["tool"]["n"])
+df.loc[nv, "group"] = "retest_b12128"
+df["full_verdict"] = [full_verdict(c, t) for c, t in zip(df["code_full"], df["tool_full"])]
 df["full_source"] = df["code_full"].notna().map({True: "full", False: ""})
-df.loc[nv, "full_source"] = "screen evidence"
 df.to_csv(R / "summary.csv", index=False)
 
 # ---------- 2. how good is the screen? ----------

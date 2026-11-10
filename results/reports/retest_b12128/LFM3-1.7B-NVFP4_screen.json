@@ -1,0 +1,68 @@
+{
+  "file": "LFM3-1.7B-NVFP4.gguf",
+  "size_bytes": 1280019776,
+  "sha256": "462c2379586a45b30fe3dbfa30e6ff08cbb440734d6934689e24e4fe59a67bec",
+  "mode": "screen",
+  "settings": {
+    "decoding": "greedy (temperature 0, seed 0)",
+    "thinking": "off; leaked reasoning before </think> stripped",
+    "code_max_tokens": 2048,
+    "tool_max_tokens": 256,
+    "ctx": 8192,
+    "kl": "WikiText-2 test, 100 chunks x 512 tokens, vs BF16 base"
+  },
+  "metadata": {
+    "architecture": "lfm3",
+    "file_type": 7,
+    "chat_template_present": true,
+    "chat_template_chars": 12129,
+    "imatrix_used": false,
+    "imatrix": {},
+    "tensor_types": {
+      "F32": 277,
+      "Q8_0": 82,
+      "NVFP4": 72
+    },
+    "n_tensors": 431
+  },
+  "server_binary": "/Users/vatsalroy/Projects/llama.cpp/build/bin/llama-server",
+  "llama_cpp": "version: 0.9.0-dev (build 12128, commit a01dff908)",
+  "server_template_present": true,
+  "tool": {
+    "n": 20,
+    "score": 1.0,
+    "tool_score": 1.0,
+    "json_score": 1.0,
+    "clean_rate": 0.85,
+    "failures": {},
+    "unclean": [
+      "json-order-0",
+      "json-order-1",
+      "json-order-2"
+    ],
+    "leaked_thinking": 0,
+    "seconds": 35.6
+  },
+  "code": {
+    "n": 15,
+    "pass1_base": 0.8,
+    "pass1_plus": 0.8,
+    "solved_plus": 12,
+    "truncated": 2,
+    "leaked_thinking": 0,
+    "gen_seconds": 209.5,
+    "n_planned": 15,
+    "stopped_early": false,
+    "failed": [
+      "HumanEval/104",
+      "HumanEval/109",
+      "HumanEval/156"
+    ],
+    "seconds": 270.7
+  },
+  "verdict": "suspect",
+  "reasons": [
+    "code screen 12/15 < 13"
+  ],
+  "total_seconds": 310.9
+}
