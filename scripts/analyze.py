@@ -240,13 +240,15 @@ for i, arm in enumerate(arms):
     for x, v in zip(xs, vals):
         ax.text(x, v + 1, str(int(v)), ha="center", fontsize=7)
 ax.axhline(T.BF16_CODE_PLUS, color="gray", lw=1)
-ax.text(2.45, T.BF16_CODE_PLUS + 1, "BF16", fontsize=7)
+ax.text(-0.45, T.BF16_CODE_PLUS + 1.5, f"BF16 ({T.BF16_CODE_PLUS})", fontsize=7, color="gray")
 ax.axhline(T.FUNCTIONAL_CODE_MIN, color="gray", ls="--", lw=1)
+ax.text(-0.45, T.FUNCTIONAL_CODE_MIN - 5, f"functional cutoff ({T.FUNCTIONAL_CODE_MIN})",
+        fontsize=7, color="gray")
 ax.set_ylim(0, 130)
 ax.set_xticks(range(len(quants))); ax.set_xticklabels(quants)
 ax.set_ylabel("HumanEval+ solved (of 164)")
 ax.set_title("Controlled rebuild: same tensor mix, only the importance matrix differs")
-ax.legend(fontsize=7, loc="upper left")
+ax.legend(fontsize=7, loc="center left", bbox_to_anchor=(0.0, 0.62))
 fig.tight_layout(); fig.savefig(F / "fig6_rebuild.png", dpi=150); plt.close(fig)
 
 print(json.dumps(out, indent=2, default=str))
