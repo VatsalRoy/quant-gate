@@ -1,0 +1,56 @@
+[
+  {
+    "quant": "Q2_K",
+    "kind": "code",
+    "plain_solved": 1,
+    "imatrix_solved": 55,
+    "only_plain_solved": 0,
+    "only_imatrix_solved": 54,
+    "p_value": 0.0
+  },
+  {
+    "quant": "Q2_K",
+    "kind": "tool",
+    "plain_solved": 36,
+    "imatrix_solved": 60,
+    "only_plain_solved": 0,
+    "only_imatrix_solved": 24,
+    "p_value": 0.0
+  },
+  {
+    "quant": "Q3_K_S",
+    "kind": "code",
+    "plain_solved": 96,
+    "imatrix_solved": 83,
+    "only_plain_solved": 28,
+    "only_imatrix_solved": 15,
+    "p_value": 0.066
+  },
+  {
+    "quant": "Q3_K_S",
+    "kind": "tool",
+    "plain_solved": 60,
+    "imatrix_solved": 60,
+    "only_plain_solved": 0,
+    "only_imatrix_solved": 0,
+    "p_value": 1.0
+  },
+  {
+    "quant": "Q3_K_M",
+    "kind": "code",
+    "plain_solved": 76,
+    "imatrix_solved": 86,
+    "only_plain_solved": 21,
+    "only_imatrix_solved": 31,
+    "p_value": 0.2116
+  },
+  {
+    "quant": "Q3_K_M",
+    "kind": "tool",
+    "plain_solved": 60,
+    "imatrix_solved": 60,
+    "only_plain_solved": 0,
+    "only_imatrix_solved": 0,
+    "p_value": 1.0
+  }
+]
