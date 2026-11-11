@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use quant-gate, please cite it as below."
+title: "quant-gate: a functional acceptance gate for quantized GGUF models"
+authors:
+  - family-names: Roy
+    given-names: Vatsal
+repository-code: "https://github.com/VatsalRoy/quant-gate"
+date-released: 2026-11-10
+version: "1.0.0"
+references:
+  - type: article
+    title: "Broken on Arrival: Silently Defective LLM Artifacts in Public Model Registries and How to Catch Them"
+    authors:
+      - family-names: Patodiya
+        given-names: Aditi
+    url: "https://arxiv.org/abs/2609.05881"
