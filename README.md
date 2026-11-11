@@ -280,7 +280,7 @@ No. Low-bit files are published as size-vs-quality trade-offs, and uploaders lab
 
 ## 📄 Learn more
 
-**[Full research report](paper/report.pdf)**: method, statistics, all 25 fully benchmarked files, threats to validity.
+**[Full research report](paper/quant_gate.pdf)**: method, statistics, all 25 fully benchmarked files, threats to validity.
 &nbsp;·&nbsp; [Environment and versions](docs/environment.md)
 
 <sub>Inspired by <a href="https://arxiv.org/abs/2609.05881">Broken on Arrival (arXiv:2609.05881)</a> and <a href="https://github.com/aditi-p31/quantcheck">quantcheck</a>. Built on <a href="https://github.com/ggml-org/llama.cpp">llama.cpp</a> and <a href="https://github.com/evalplus/evalplus">EvalPlus</a>. Pass marks are tuned for LFM3-1.7B; see the report to adapt them to another model.</sub>
